@@ -3,7 +3,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-        // "altheajs":["packages/altheajs"],
         "@althea-net/address-converter": ["packages/address-converter"],
         "@althea-net/eip712":["packages/eip712"],
         "@althea-net/proto":["packages/proto"],
