@@ -1,6 +1,6 @@
 {
-  "name": "@evmos/proto",
-  "description": "Protobuf files for EVMOS.",
+  "name": "@althea-net/proto",
+  "description": "Protobuf files for Althea-L1.",
   "version": "0.2.1",
   "license": "MIT",
   "main": "dist/index.js",

@@ -1,10 +1,10 @@
-import { createMsgCancelRevenue as protoMsgCancelRevenue } from '@evmos/proto'
+import { createMsgCancelRevenue as protoMsgCancelRevenue } from '@althea-net/proto'
 
 import {
   generateTypes,
   createMsgCancelRevenue,
   MSG_CANCEL_REVENUE_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { createTransactionPayload, TxContext } from '../base.js'
 
 export interface MsgCancelRevenueParams {

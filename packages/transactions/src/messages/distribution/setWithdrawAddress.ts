@@ -1,10 +1,10 @@
-import { createMsgSetWithdrawAddress as protoMsgSetWithdrawAddress } from '@evmos/proto'
+import { createMsgSetWithdrawAddress as protoMsgSetWithdrawAddress } from '@althea-net/proto'
 
 import {
   generateTypes,
   MSG_SET_WITHDRAW_ADDRESS_TYPES,
   createMsgSetWithdrawAddress,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { createTransactionPayload, TxContext } from '../base.js'
 
 export interface MsgSetWithdrawAddressParams {

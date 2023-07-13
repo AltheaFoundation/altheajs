@@ -41,15 +41,15 @@ The examples are using `signTransaction` or `singTransactionUsingEIP712` to sign
 NOTE: msg is the result of calling any `createTx...` function using evmosjs
 
 ```ts
-import { evmosToEth } from '@evmos/address-converter'
+import { evmosToEth } from '@althea-net/address-converter'
 import {
   generateEndpointBroadcast,
   generatePostBodyBroadcast,
-} from '@evmos/provider'
+} from '@althea-net/provider'
 import {
   createTxRawEIP712,
   signatureToWeb3Extension,
-} from '@evmos/transactions'
+} from '@althea-net/transactions'
 
 // Init Metamask
 await window.ethereum.enable()

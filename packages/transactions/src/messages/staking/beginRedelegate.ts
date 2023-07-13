@@ -1,10 +1,10 @@
-import { createMsgBeginRedelegate as protoMsgBeginRedelegate } from '@evmos/proto'
+import { createMsgBeginRedelegate as protoMsgBeginRedelegate } from '@althea-net/proto'
 
 import {
   generateTypes,
   MSG_BEGIN_REDELEGATE_TYPES,
   createMsgBeginRedelegate,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 
 import { createTransactionPayload, TxContext } from '../base.js'
 

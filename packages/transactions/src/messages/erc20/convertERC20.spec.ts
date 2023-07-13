@@ -1,10 +1,10 @@
-import { createMsgConvertERC20 as protoMsgConvertERC20 } from '@evmos/proto'
+import { createMsgConvertERC20 as protoMsgConvertERC20 } from '@althea-net/proto'
 
 import {
   generateTypes,
   createMsgConvertERC20,
   MSG_CONVERT_ERC20_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { MsgConvertERC20Params, createTxMsgConvertERC20 } from './convertERC20'
 import { createTransactionPayload } from '../base'
 import TestUtils from '../../tests/utils'

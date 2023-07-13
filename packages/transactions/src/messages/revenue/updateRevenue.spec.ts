@@ -1,9 +1,9 @@
-import { createMsgUpdateRevenue as protoMsgUpdateRevenue } from '@evmos/proto'
+import { createMsgUpdateRevenue as protoMsgUpdateRevenue } from '@althea-net/proto'
 import {
   generateTypes,
   createMsgUpdateRevenue,
   MSG_UPDATE_REVENUE_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import {
   MsgUpdateRevenueParams,
   createTxMsgUpdateRevenue,

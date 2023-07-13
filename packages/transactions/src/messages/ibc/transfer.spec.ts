@@ -1,9 +1,9 @@
-import { createIBCMsgTransfer as protoIBCMsgTransfer } from '@evmos/proto'
+import { createIBCMsgTransfer as protoIBCMsgTransfer } from '@althea-net/proto'
 import {
   generateTypes,
   createIBCMsgTransfer,
   CREATE_IBC_MSG_TRANSFER_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { IBCMsgTransferParams, createTxIBCMsgTransfer } from './transfer'
 import { createTransactionPayload } from '../base'
 import TestUtils from '../../tests/utils'

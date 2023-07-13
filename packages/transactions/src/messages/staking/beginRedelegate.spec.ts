@@ -1,9 +1,9 @@
-import { createMsgBeginRedelegate as protoMsgBeginRedelegate } from '@evmos/proto'
+import { createMsgBeginRedelegate as protoMsgBeginRedelegate } from '@althea-net/proto'
 import {
   generateTypes,
   createMsgBeginRedelegate,
   MSG_BEGIN_REDELEGATE_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import {
   MsgBeginRedelegateParams,
   createTxMsgBeginRedelegate,

@@ -2,7 +2,7 @@
 // This dependency is local to the utils project
 
 import { Wallet } from '@ethersproject/wallet'
-import { createMessageSend } from '@evmos/transactions'
+import { createMessageSend } from '@althea-net/transactions'
 import {
   broadcast,
   getSender,

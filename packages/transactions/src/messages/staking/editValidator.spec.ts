@@ -1,9 +1,9 @@
-import { createMsgEditValidator as protoMsgEditValidator } from '@evmos/proto'
+import { createMsgEditValidator as protoMsgEditValidator } from '@althea-net/proto'
 import {
   generateTypes,
   createMsgEditValidator,
   MSG_EDIT_VALIDATOR_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import {
   MsgEditValidatorParams,
   createTxMsgEditValidator,

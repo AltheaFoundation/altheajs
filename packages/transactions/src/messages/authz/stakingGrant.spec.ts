@@ -1,4 +1,8 @@
-import { createMsgGrant, createStakeAuthorization, Proto } from '@evmos/proto'
+import {
+  createMsgGrant,
+  createStakeAuthorization,
+  Proto,
+} from '@althea-net/proto'
 import { createTransactionPayload } from '../base'
 
 import {

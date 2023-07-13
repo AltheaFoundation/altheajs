@@ -1,10 +1,10 @@
-import { createMsgCancelUnbondingDelegation as protoMsgCancelUnbondingDelegation } from '@evmos/proto'
+import { createMsgCancelUnbondingDelegation as protoMsgCancelUnbondingDelegation } from '@althea-net/proto'
 
 import {
   generateTypes,
   MSG_CANCEL_UNBONDING_DELEGATION_TYPES,
   createMsgCancelUnbondingDelegation,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 
 import { createTransactionPayload, TxContext } from '../base.js'
 

@@ -1,10 +1,10 @@
-import { createMsgWithdrawDelegatorReward as protoMsgWithdrawDelegatorReward } from '@evmos/proto'
+import { createMsgWithdrawDelegatorReward as protoMsgWithdrawDelegatorReward } from '@althea-net/proto'
 
 import {
   generateTypes,
   MSG_WITHDRAW_DELEGATOR_REWARD_TYPES,
   createMsgWithdrawDelegatorReward,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { createTransactionPayload, TxContext } from '../base.js'
 
 export interface MsgWithdrawDelegatorRewardParams {

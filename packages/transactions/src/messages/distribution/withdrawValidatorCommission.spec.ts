@@ -1,10 +1,10 @@
-import { createMsgWithdrawValidatorCommission as protoMsgWithdrawValidatorCommission } from '@evmos/proto'
+import { createMsgWithdrawValidatorCommission as protoMsgWithdrawValidatorCommission } from '@althea-net/proto'
 
 import {
   generateTypes,
   MSG_WITHDRAW_VALIDATOR_COMMISSION_TYPES,
   createMsgWithdrawValidatorCommission,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import {
   MsgWithdrawValidatorCommissionParams,
   createTxMsgWithdrawValidatorCommission,

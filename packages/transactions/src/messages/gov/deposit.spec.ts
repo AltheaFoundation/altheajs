@@ -1,9 +1,9 @@
-import { createMsgDeposit as protoMsgDeposit } from '@evmos/proto'
+import { createMsgDeposit as protoMsgDeposit } from '@althea-net/proto'
 import {
   generateTypes,
   createMsgDeposit,
   MSG_DEPOSIT_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { MsgDepositParams, createTxMsgDeposit } from './deposit'
 import { createTransactionPayload } from '../base'
 import TestUtils from '../../tests/utils'

@@ -3,13 +3,13 @@ import {
   generateFee,
   generateMessageWithMultipleTransactions,
   createTypedData,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import {
   createTransactionWithMultipleMessages,
   MessageGenerated,
   createStdFee,
   createStdSignDocFromProto,
-} from '@evmos/proto'
+} from '@althea-net/proto'
 import { Chain, Fee, Sender, TxPayload } from './common.js'
 
 /**

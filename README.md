@@ -1,10 +1,18 @@
-# evmosjs
+# altheajs
 
-JS and TS libs for Evmos.
+JS and TS libs for interacting with Althea-L1 via Ethereum wallets like MetaMask
+
+## Credits
+
+This repo is a fork of evmos/evmosjs, and all of the shared history is preserved. Please see the contributors page or the commit history to see the original creators and their contributions to that upstream repo.
+
+## WIP Migration
+
+altheajs is in the process of migrating from the old evmos buf.build compiled protos to the telescope-based althea-net/althea-proto-js definitions. The following instructions are likely inaccurate.
 
 ## Installation
 
-evmosjs uses [buf.build](https://buf.build/) to manage [Evmos Protobuf dependencies](https://buf.build/evmos). To install evmosjs packages in your project,
+altheajs uses [buf.build](https://buf.build/) to manage [althea Protobuf dependencies](https://buf.build/althea). To install altheajs packages in your project,
 follow the instructions corresponding to your package manager.
 
 ### NPM
@@ -18,13 +26,13 @@ Add the following line to an `.npmrc` file in your project root:
 Then run:
 
 ```bash
-npm install evmosjs
+npm install altheajs
 ```
 
 Or:
 
 ```bash
-npm install @evmos/<package>
+npm install @althea/<package>
 ```
 
 ### Yarn v2.x or v3.x
@@ -40,13 +48,13 @@ npmScopes:
 Then run:
 
 ```bash
-yarn add evmosjs
+yarn add altheajs
 ```
 
 Or:
 
 ```bash
-yarn add @evmos/<package>
+yarn add @althea/<package>
 ```
 
 Note that Yarn v1 is not supported ([see explanation](https://docs.buf.build/bsr/remote-packages/npm#other-package-managers)).
@@ -58,9 +66,9 @@ Note that Yarn v1 is not supported ([see explanation](https://docs.buf.build/bsr
 Query the account number, sequence, and pubkey for a given address.
 
 ```ts
-import { generateEndpointAccount } from '@evmos/provider'
+import { generateEndpointAccount } from '@althea/provider'
 
-const address = 'evmos1...'
+const address = 'althea1...'
 
 // Find node urls for either mainnet or testnet here:
 // https://docs.evmos.org/develop/api/networks.
@@ -80,7 +88,7 @@ const rawResult = await fetch(
 
 const result = await rawResult.json()
 
-// The response format is available at @evmos/provider/rest/account/AccountResponse.
+// The response format is available at @althea/provider/rest/account/AccountResponse.
 // Note that the `pub_key` will be `null` if the address has not sent any transactions.
 /*
   account: {
@@ -158,7 +166,7 @@ const pk = Buffer.from(
 
 Create a transaction payload which can be signed using either Metamask or Keplr.
 
-This example uses `MsgSend`. View all signable transaction payloads in the [Transaction Docs](https://github.com/evmos/evmosjs/tree/main/docs/transactions).
+This example uses `MsgSend`. View all signable transaction payloads in the [Transaction Docs](https://github.com/althea-net/altheajs/tree/main/docs/transactions).
 
 ```ts
 import {
@@ -169,11 +177,11 @@ import {
   MsgSendParams,
   createTxMsgSend,
   TxPayload,
-} from '@evmos/transactions'
+} from '@althea/transactions'
 
 const chain: Chain = {
-  chainId: 9001,
-  cosmosChainId: 'evmos_9001-2',
+  chainId: 417834,
+  cosmosChainId: 'althea_417834-3',
 }
 
 // Populate the transaction sender parameters using the
@@ -189,7 +197,7 @@ const sender: Sender = {
 
 const fee: Fee = {
   amount: '4000000000000000',
-  denom: 'aevmos',
+  denom: 'aalthea',
   gas: '200000',
 }
 
@@ -205,7 +213,7 @@ const context: TxContext = {
 const params: MsgSendParams = {
   destinationAddress: <destination_address>,
   amount: <transaction_amount>,
-  denom: 'aevmos',
+  denom: 'aalthea',
 }
 
 const tx: TxPayload = createTxMsgSend(context, params)
@@ -213,11 +221,11 @@ const tx: TxPayload = createTxMsgSend(context, params)
 
 ### Sign the Transaction with MetaMask
 
-Evmos supports EIP-712 signatures for Cosmos payloads to be signed using Ethereum wallets such as MetaMask.
+Althea-L1 supports EIP-712 signatures for Cosmos payloads to be signed using Ethereum wallets such as MetaMask.
 
 ```ts
-import { createTxRaw } from '@evmos/proto'
-import { evmosToEth } from '@evmos/address-converter'
+import { createTxRaw } from '@althea-net/altheajs/proto'
+import { evmosToEth } from '@althea-net/altheajs/address-converter'
 
 // First, populate a TxContext object and create a signable Tx payload.
 // (See 'Create a Signable Transaction' to learn how to create these).
@@ -253,10 +261,10 @@ const signedTx = createTxRaw(
 
 ### Sign the Transaction with Keplr (SignDirect)
 
-EvmosJS supports Cosmos SDK `SignDirect` payloads that can be signed using Keplr.
+AltheaJS supports Cosmos SDK `SignDirect` payloads that can be signed using Keplr.
 
 ```ts
-import { createTxRaw } from '@evmos/proto'
+import { createTxRaw } from '@althea-net/altheajs/proto'
 
 // First, populate a TxContext object and create a signable Tx payload.
 // (See 'Create a Signable Transaction' to learn how to create these).
@@ -296,11 +304,11 @@ const signedTx = createTxRaw(
 
 ### Sign the Transaction with Keplr (EIP-712)
 
-EvmosJS also supports signing [EIP-712](https://eips.ethereum.org/EIPS/eip-712) payloads using Keplr. This is necessary for Ledger users on Keplr, since the Ledger device cannot sign `SignDirect` payloads.
+AltheaJS also supports signing [EIP-712](https://eips.ethereum.org/EIPS/eip-712) payloads using Keplr. This is necessary for Ledger users on Keplr, since the Ledger device cannot sign `SignDirect` payloads.
 
 ```ts
 import { EthSignType } from '@keplr-wallet/types';
-import { createTxRaw } from '@evmos/proto'
+import { createTxRaw } from '@althea-net/altheajs/proto'
 
 // First, populate a TxContext object and create a signable Tx payload.
 // (See 'Create a Signable Transaction' to learn how to create these).
@@ -340,7 +348,7 @@ Regardless of how the transaction is signed, broadcasting takes place the same w
 import {
   generateEndpointBroadcast,
   generatePostBodyBroadcast,
-} from '@evmos/provider'
+} from '@althea-net/altheajs/provider'
 
 // First, sign a transaction using MetaMask or Keplr.
 const signedTx = createTxRaw(...)

@@ -1,4 +1,4 @@
-import { createMsgRevoke, RevokeMessages } from '@evmos/proto'
+import { createMsgRevoke, RevokeMessages } from '@althea-net/proto'
 
 import { createTransactionPayload, TxContext } from '../base.js'
 
@@ -7,7 +7,7 @@ export interface MsgStakeRevokeAuthorizationParams {
 }
 
 const createEIP712MsgStakeRevokeAuthorization = () => {
-  // TODO: EIP-712 is blocked until this message is added to @evmos/eip712
+  // TODO: EIP-712 is blocked until this message is added to @althea-net/eip712
   return {
     types: {},
     message: {},

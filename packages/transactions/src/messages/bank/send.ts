@@ -1,4 +1,4 @@
-import { createMsgSend as protoCreateMsgSend } from '@evmos/proto'
+import { createMsgSend as protoCreateMsgSend } from '@althea-net/proto'
 import { newCreateTransactionPayload, TxContext } from '../base.js'
 
 export interface MsgSendParams {

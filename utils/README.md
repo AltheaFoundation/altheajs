@@ -30,14 +30,14 @@ Success sign transaction
 
 ## Requirements
 
-- `evmosd` node running
-- `enabled-unsafe-cors` set as `true` (`~/.evmosd/config/app.toml` or `--api.enabled-unsafe-cors true`)
-- rest api (`1317`) enabled (`~/.evmosd/config/app.toml` or `--api.enabled true`)
-- some coins (`evmosd tx bank send mykey evmos14rajuselkxsvqtqv20lamd08t8zxg8qdrlvp8x 100evmos --keyring-backend test --fees=20aevmos`)
+- `althea` node running
+- `enabled-unsafe-cors` set as `true` (`~/.althea/config/app.toml` or `--api.enabled-unsafe-cors true`)
+- rest api (`1317`) enabled (`~/.althea/config/app.toml` or `--api.enabled true`)
+- some coins (`althea tx bank send mykey althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm 100althea --keyring-backend test --fees=20aalthea`)
 
 ## Note
 
 Wallet address:
 
-- Hex: 0xa8fB2e433fb1A0c02C0C53FFdDB5e759C4641C0D
-- Evmos: evmos14rajuselkxsvqtqv20lamd08t8zxg8qdrlvp8x
+- Hex: 0xACA5D5F3DC8DDFE820890314350BC507F64A7C6E
+- Althea: althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm

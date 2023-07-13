@@ -1,10 +1,10 @@
-import { createMsgUndelegate as protoMsgUndelegate } from '@evmos/proto'
+import { createMsgUndelegate as protoMsgUndelegate } from '@althea-net/proto'
 
 import {
   generateTypes,
   MSG_UNDELEGATE_TYPES,
   createMsgUndelegate,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 
 import { createTransactionPayload, TxContext } from '../base.js'
 

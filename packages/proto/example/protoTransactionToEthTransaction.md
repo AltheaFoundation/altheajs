@@ -3,7 +3,7 @@
 ## Requirements
 
 ```sh
-yarn add @evmos/proto
+yarn add @althea-net/proto
 yarn add ethers
 ```
 
@@ -18,7 +18,7 @@ import {
   bytesToMsgEthereumTx,
   bytesToTxBody,
   bytesToTxRaw,
-} from '@evmos/proto'
+} from '@althea-net/proto'
 
 // Create the legacyTx
 const blockchainTx =

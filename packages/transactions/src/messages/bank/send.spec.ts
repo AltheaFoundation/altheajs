@@ -1,5 +1,9 @@
-import { createMsgSend as protoMsgSend } from '@evmos/proto'
-import { generateTypes, createMsgSend, MSG_SEND_TYPES } from '@evmos/eip712'
+import { createMsgSend as protoMsgSend } from '@althea-net/proto'
+import {
+  generateTypes,
+  createMsgSend,
+  MSG_SEND_TYPES,
+} from '@althea-net/eip712'
 import { MsgSendParams, createTxMsgSend } from './send'
 import { createTransactionPayload } from '../base'
 import TestUtils from '../../tests/utils'

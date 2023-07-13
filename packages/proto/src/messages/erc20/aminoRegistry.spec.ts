@@ -1,5 +1,8 @@
 import { createERC20AminoConverters } from './aminoRegistry'
-import { MsgConvertCoin, MsgConvertERC20 } from '../../proto/evmos/erc20/tx'
+import {
+  MsgConvertCoin,
+  MsgConvertERC20,
+} from '../../proto/althea-net/erc20/tx'
 import { createAminoConverter } from '../../amino/objectConverter'
 import { expectEqualsDefaultAminoConverters } from '../../../testutils/compareAminoRegistry'
 

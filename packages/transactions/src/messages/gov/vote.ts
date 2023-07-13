@@ -1,6 +1,10 @@
-import { createMsgVote as protoMsgVote } from '@evmos/proto'
+import { createMsgVote as protoMsgVote } from '@althea-net/proto'
 
-import { generateTypes, createMsgVote, MSG_VOTE_TYPES } from '@evmos/eip712'
+import {
+  generateTypes,
+  createMsgVote,
+  MSG_VOTE_TYPES,
+} from '@althea-net/eip712'
 import { createTransactionPayload, TxContext } from '../base.js'
 
 export interface MsgVoteParams {

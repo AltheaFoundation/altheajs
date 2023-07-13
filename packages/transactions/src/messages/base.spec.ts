@@ -3,7 +3,7 @@ import {
   createMsgDelegate as protoMsgDelegate,
   createTransaction,
   createTransactionWithMultipleMessages,
-} from '@evmos/proto'
+} from '@althea-net/proto'
 import {
   createEIP712,
   generateFee,
@@ -12,7 +12,7 @@ import {
   generateTypes,
   createMsgSend,
   MSG_SEND_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 
 import { createTransactionPayload } from './base'
 import TestUtils from '../tests/utils'

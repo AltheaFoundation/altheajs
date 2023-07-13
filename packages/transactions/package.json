@@ -1,6 +1,6 @@
 {
-  "name": "@evmos/transactions",
-  "description": "Transactions generator for EVMOS",
+  "name": "@althea-net/transactions",
+  "description": "Transactions generator for Althea-L1",
   "version": "0.3.2",
   "license": "MIT",
   "main": "dist/index.js",
@@ -27,8 +27,8 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@evmos/eip712": "^0.3.1",
-    "@evmos/proto": "^0.2.1",
+    "@althea-net/eip712": "^0.3.1",
+    "@althea-net/proto": "^0.2.1",
     "link-module-alias": "^1.2.0",
     "shx": "^0.3.4"
   },

@@ -1,10 +1,10 @@
-import { createMsgRevoke } from '@evmos/proto'
+import { createMsgRevoke } from '@althea-net/proto'
 
 import {
   generateTypes,
   createMsgRevokeGenericAuthorization,
   MSG_REVOKE_GENERIC_AUTHORIZATION_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { createTransactionPayload, TxContext } from '../base.js'
 
 export interface MsgGenericRevokeParams {

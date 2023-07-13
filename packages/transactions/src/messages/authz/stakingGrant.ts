@@ -1,4 +1,8 @@
-import { createMsgGrant, createStakeAuthorization, Proto } from '@evmos/proto'
+import {
+  createMsgGrant,
+  createStakeAuthorization,
+  Proto,
+} from '@althea-net/proto'
 import { createTransactionPayload, TxContext } from '../base.js'
 
 export interface MsgStakeAuthorizationParams {
@@ -11,7 +15,7 @@ export interface MsgStakeAuthorizationParams {
 
 const createEIP712MsgStakeAuthorization = () => {
   // TODO: EIP-712 Stake Authorization is blocked until StakeAuthorization
-  // is added to @evmos/eip712
+  // is added to @althea-net/eip712
   return {
     types: {},
     message: {},

@@ -1,10 +1,10 @@
-import { createMsgConvertCoin as protoMsgConvertCoin } from '@evmos/proto'
+import { createMsgConvertCoin as protoMsgConvertCoin } from '@althea-net/proto'
 
 import {
   generateTypes,
   createMsgConvertCoin,
   MSG_CONVERT_COIN_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { createTransactionPayload, TxContext } from '../base.js'
 
 export interface MsgConvertCoinParams {

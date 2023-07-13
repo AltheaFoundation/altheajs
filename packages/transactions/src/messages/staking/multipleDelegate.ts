@@ -1,10 +1,10 @@
-import { createMsgDelegate as protoMsgDelegate } from '@evmos/proto'
+import { createMsgDelegate as protoMsgDelegate } from '@althea-net/proto'
 
 import {
   generateTypes,
   MSG_DELEGATE_TYPES,
   createMsgDelegate,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { MsgDelegateParams } from './delegate.js'
 import { createTransactionPayload, TxContext } from '../base.js'
 

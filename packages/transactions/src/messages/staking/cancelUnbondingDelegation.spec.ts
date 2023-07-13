@@ -1,9 +1,9 @@
-import { createMsgCancelUnbondingDelegation as protoMsgCancelUnbondingDelegation } from '@evmos/proto'
+import { createMsgCancelUnbondingDelegation as protoMsgCancelUnbondingDelegation } from '@althea-net/proto'
 import {
   generateTypes,
   createMsgCancelUnbondingDelegation,
   MSG_CANCEL_UNBONDING_DELEGATION_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import {
   MsgCancelUnbondingDelegationParams,
   createTxMsgCancelUnbondingDelegation,

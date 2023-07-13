@@ -1,10 +1,10 @@
-import { createMsgEditValidator as protoMsgEditValidator } from '@evmos/proto'
+import { createMsgEditValidator as protoMsgEditValidator } from '@althea-net/proto'
 
 import {
   generateTypes,
   MSG_EDIT_VALIDATOR_TYPES,
   createMsgEditValidator,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 
 import { createTransactionPayload, TxContext } from '../base.js'
 

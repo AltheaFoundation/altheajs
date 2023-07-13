@@ -1,6 +1,6 @@
 # Proto
 
-Protobuf files used to generate cosmos/evmos transactions.
+Protobuf files used to generate cosmos transactions for Althea-L1.
 
 ## Convert protobuf to Eth Transaction
 

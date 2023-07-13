@@ -1,4 +1,4 @@
-import { createMsgRevoke, RevokeMessages } from '@evmos/proto'
+import { createMsgRevoke, RevokeMessages } from '@althea-net/proto'
 
 import { createTransactionPayload } from '../base'
 

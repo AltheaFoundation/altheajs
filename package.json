@@ -1,5 +1,5 @@
 {
-  "name": "@evmos/evmosjs",
+  "name": "@althea-net/altheajs",
   "version": "0.1.0",
   "main": "index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
     "access": "public"
   },
   "author": "Guillermo Paoletti <guillermo.paoletti@gmail.com>",
-  "repository": "https://github.com/tharsis/evmosjs",
+  "repository": "https://github.com/althea-net/altheajs",
   "workspaces": {
     "packages": [
       "packages/*"

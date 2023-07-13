@@ -8,11 +8,11 @@
   },
   "dependencies": {
     "@hanchon/evmos-ts-wallet": "^0.1.1",
-    "@evmos/address-converter": "^0.1.8",
-    "@evmos/eip712": "^0.2.2",
-    "@evmos/proto": "^0.2.0",
-    "@evmos/provider": "^0.2.4",
-    "@evmos/transactions": "^0.2.3"
+    "@althea-net/address-converter": "^0.1.8",
+    "@althea-net/eip712": "^0.2.2",
+    "@althea-net/proto": "^0.2.0",
+    "@althea-net/provider": "^0.2.4",
+    "@althea-net/transactions": "^0.2.3"
   },
   "devDependencies": {
     "typescript": "^4.7.3"

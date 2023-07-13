@@ -1,9 +1,9 @@
-import { createMsgUndelegate as protoMsgUndelegate } from '@evmos/proto'
+import { createMsgUndelegate as protoMsgUndelegate } from '@althea-net/proto'
 import {
   generateTypes,
   createMsgUndelegate,
   MSG_UNDELEGATE_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { MsgUndelegateParams, createTxMsgUndelegate } from './undelegate'
 import { createTransactionPayload } from '../base'
 import TestUtils from '../../tests/utils'

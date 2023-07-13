@@ -1,10 +1,10 @@
-import { createMsgCreateClawbackVestingAccount as protoMsgCreateClawbackVestingAccount } from '@evmos/proto'
+import { createMsgCreateClawbackVestingAccount as protoMsgCreateClawbackVestingAccount } from '@althea-net/proto'
 
 import {
   generateTypes,
   createMsgCreateClawbackVestingAccount,
   MSG_CREATE_CLAWBACK_VESTING_ACCOUNT_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { createTransactionPayload, TxContext } from '../base.js'
 import { Period } from '../common.js'
 

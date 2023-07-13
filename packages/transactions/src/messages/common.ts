@@ -1,4 +1,4 @@
-import { Proto } from '@evmos/proto'
+import { Proto } from '@althea-net/proto'
 
 /**
  * EI712ToSign represents a signable EIP-712 payload that can be signed using MetaMask or Keplr.

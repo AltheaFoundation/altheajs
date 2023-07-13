@@ -1,8 +1,8 @@
-yarn unlink "@evmos/address-converter"
-yarn unlink "@evmos/eip712"
-yarn unlink "@evmos/proto"
-yarn unlink "@evmos/provider"
-yarn unlink "@evmos/transactions"
+yarn unlink "@althea-net/address-converter"
+yarn unlink "@althea-net/eip712"
+yarn unlink "@althea-net/proto"
+yarn unlink "@althea-net/provider"
+yarn unlink "@althea-net/transactions"
 
 cd ..
 cd packages/address-converter
@@ -22,8 +22,8 @@ yarn unlink
 yarn link
 cd ..
 cd utils
-yarn link "@evmos/address-converter"
-yarn link "@evmos/eip712"
-yarn link "@evmos/proto"
-yarn link "@evmos/provider"
-yarn link "@evmos/transactions"
+yarn link "@althea-net/address-converter"
+yarn link "@althea-net/eip712"
+yarn link "@althea-net/proto"
+yarn link "@althea-net/provider"
+yarn link "@althea-net/transactions"

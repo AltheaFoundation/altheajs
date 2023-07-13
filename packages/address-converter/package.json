@@ -1,6 +1,6 @@
 {
-  "name": "@evmos/address-converter",
-  "description": "Address converter, convert ETH address to Ethermint/evmos address.",
+  "name": "@althea-net/address-converter",
+  "description": "Address converter, convert ETH address to Ethermint address.",
   "version": "0.1.9",
   "license": "MIT",
   "main": "dist/index.js",

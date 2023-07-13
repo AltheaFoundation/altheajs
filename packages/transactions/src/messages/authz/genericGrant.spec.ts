@@ -1,13 +1,13 @@
 import {
   createGenericAuthorization as protoCreateGenericAuthorization,
   createMsgGrant,
-} from '@evmos/proto'
+} from '@althea-net/proto'
 
 import {
   generateTypes,
   createMsgGenericAuthorization,
   MSG_GENERIC_AUTHORIZATION_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 
 import {
   createTxMsgGenericGrant,

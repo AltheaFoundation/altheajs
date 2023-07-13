@@ -1,9 +1,9 @@
-import { createMsgClawback as protoMsgClawback } from '@evmos/proto'
+import { createMsgClawback as protoMsgClawback } from '@althea-net/proto'
 import {
   generateTypes,
   createMsgClawback,
   MSG_CLAWBACK_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { createTransactionPayload, TxContext } from '../base.js'
 
 export interface MsgClawbackParams {

@@ -4,7 +4,7 @@ EIP712 transactions creator.
 
 # Installation
 
-- `yarn add @evmos/evmosjs`
+- `yarn add @althea-net/altheajs`
 
 # Example
 
@@ -18,22 +18,22 @@ import {
   generateTypes,
   createMsgSend,
   MSG_SEND_TYPES,
-} from '@evmos/evmosjs/packages/eip712'
+} from '@althea-net/altheajs/packages/eip712'
 
 let fee = generateFee(
   '20',
-  'aphoton',
+  'aalthea',
   '20000',
-  'ethm1tfegf50n5xl0hd5cxfzjca3ylsfpg0fned5gqm',
+  'althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm',
 )
 let types = generateTypes(MSG_SEND_TYPES)
 let msg = createMsgSend(
   '1',
-  'aphoton',
-  'ethm1tfegf50n5xl0hd5cxfzjca3ylsfpg0fned5gqm',
-  'ethm1tfegf50n5xl0hd5cxfzjca3ylsfpg0fned5gqm',
+  'aalthea',
+  'althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm',
+  'althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm',
 )
-let messages = generateMessage('9', '0', 'ethermint_9000-1', '', fee, msg)
+let messages = generateMessage('9', '0', 'althea_417834-3', '', fee, msg)
 let complete = createEIP712(types, 9000, messages)
 console.log(complete)
 ```
@@ -158,16 +158,16 @@ console.log(complete)
   },
   "message": {
     "account_number": "9",
-    "chain_id": "ethermint_9000-1",
+    "chain_id": "althea_417834-3",
     "fee": {
       "amount": [
         {
           "amount": "20",
-          "denom": "aphoton"
+          "denom": "aalthea"
         }
       ],
       "gas": "20000",
-      "feePayer": "ethm1tfegf50n5xl0hd5cxfzjca3ylsfpg0fned5gqm"
+      "feePayer": "althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm"
     },
     "memo": "",
     "msgs": [
@@ -177,11 +177,11 @@ console.log(complete)
           "amount": [
             {
               "amount": "1",
-              "denom": "aphoton"
+              "denom": "aalthea"
             }
           ],
-          "from_address": "ethm1tfegf50n5xl0hd5cxfzjca3ylsfpg0fned5gqm",
-          "to_address": "ethm1tfegf50n5xl0hd5cxfzjca3ylsfpg0fned5gqm"
+          "from_address": "althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm",
+          "to_address": "althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm"
         }
       }
     ],

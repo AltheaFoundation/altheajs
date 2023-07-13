@@ -1,11 +1,11 @@
 # Address converter
 
-A simple converter between `ETH` address and `Ethermint`/`evmos` addresses.
+A simple converter between `ETH` (0x...) addresses and `Ethermint` (althea1...) addresses.
 
 ## Installation
 
 ```sh
-npm install @evmos/address-converter
+npm install @althea-net/address-converter
 ```
 
 ## Usage
@@ -13,51 +13,51 @@ npm install @evmos/address-converter
 ### Converter
 
 ```ts
-import { ethToEthermint, ethermintToEth } from '@evmos/address-converter'
+import { ethToEthermint, ethermintToEth } from '@althea-net/address-converter'
 
-let address = ethToEthermint('0xe2D61e49ff8a9d724CC54d338D8076F878aC6b71')
-// "ethm1uttpuj0l32whynx9f5ecmqrklpu2c6m3973048"
+let address = ethToEthermint('0xACA5D5F3DC8DDFE820890314350BC507F64A7C6E')
+// "althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm"
 
-let address = ethermintToEth('ethm1uttpuj0l32whynx9f5ecmqrklpu2c6m3973048')
-// "0xe2D61e49ff8a9d724CC54d338D8076F878aC6b71"
+let address = ethermintToEth('althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm')
+// "0xACA5D5F3DC8DDFE820890314350BC507F64A7C6E"
 ```
 
 ### Decoders
 
 ```ts
-import { ETH, ETHERMINT } from '@evmos/address-converter'
-let hex = ETH.decoder('0xe2D61e49ff8a9d724CC54d338D8076F878aC6b71')
-// hex.toString('hex') === "e2d61e49ff8a9d724cc54d338d8076f878ac6b71"
+import { ETH, ETHERMINT } from '@althea-net/address-converter'
+let hex = ETH.decoder('0xACA5D5F3DC8DDFE820890314350BC507F64A7C6E')
+// hex.toString('hex') === "ACA5D5F3DC8DDFE820890314350BC507F64A7C6E"
 
-hex = ETHERMINT.decoder('ethm1uttpuj0l32whynx9f5ecmqrklpu2c6m3973048')
-// hex.toString('hex') === "e2d61e49ff8a9d724cc54d338d8076f878ac6b71"
+hex = ETHERMINT.decoder('althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm')
+// hex.toString('hex') === "ACA5D5F3DC8DDFE820890314350BC507F64A7C6E"
 ```
 
 ### Encoders
 
 ```ts
-import { ETH, ETHERMINT } from '@evmos/address-converter'
+import { ETH, ETHERMINT } from '@althea-net/address-converter'
 let address = ETH.encoder(
-  Buffer.from('e2d61e49ff8a9d724cc54d338d8076f878ac6b71', 'hex'),
+  Buffer.from('ACA5D5F3DC8DDFE820890314350BC507F64A7C6E', 'hex'),
 )
-// address === "0xe2D61e49ff8a9d724CC54d338D8076F878aC6b71"
+// address === "ACA5D5F3DC8DDFE820890314350BC507F64A7C6E"
 
 address = ETHERMINT.encoder(
-  Buffer.from('e2d61e49ff8a9d724cc54d338d8076f878ac6b71', 'hex'),
+  Buffer.from('ACA5D5F3DC8DDFE820890314350BC507F64A7C6E', 'hex'),
 )
-// address === "ethm1uttpuj0l32whynx9f5ecmqrklpu2c6m3973048"
+// address === "althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm"
 ```
 
-### EVMOS support
+### Althea-L1 support
 
 ```ts
-import { ethToEvmos, evmosToEth } from '@evmos/address-converter'
+import { ethToEvmos, evmosToEth } from '@althea-net/address-converter'
 
-let address = ethToEvmos('0x14574a6DFF2Ddf9e07828b4345d3040919AF5652')
-// "evmos1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw"
+let address = ethToEvmos('0xACA5D5F3DC8DDFE820890314350BC507F64A7C6E')
+// "althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm"
 
-let address = evmosToEth('evmos1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw')
-// "0x14574a6DFF2Ddf9e07828b4345d3040919AF5652"
+let address = evmosToEth('althea14jjatu7u3h07sgyfqv2r2z79qlmy5lrw27asjm')
+// "ACA5D5F3DC8DDFE820890314350BC507F64A7C6E"
 ```
 
 ## Reference

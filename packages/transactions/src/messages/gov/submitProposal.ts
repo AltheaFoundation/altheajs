@@ -1,12 +1,12 @@
 import {
   createMsgSubmitProposal as protoMsgSubmitProposal,
   createAnyMessage,
-} from '@evmos/proto'
+} from '@althea-net/proto'
 import {
   generateTypes,
   createMsgSubmitProposal,
   MSG_SUBMIT_PROPOSAL_TYPES,
-} from '@evmos/eip712'
+} from '@althea-net/eip712'
 import { createTransactionPayload, TxContext } from '../base.js'
 
 export interface MsgSubmitProposalParams {
