@@ -33,7 +33,7 @@
   "devDependencies": {
     "@types/node": "^17.0.21"
   },
-  "gitHead": "37b73058f30b61fc946c531f1b800a551649767c",
+  "gitHead": "a061205d0cb2b4bee97127f1d67d2fc29cc025ae",
   "publishConfig": {
     "access": "public"
   }
