@@ -36,7 +36,8 @@
     "format": "yarn lint --fix",
     "format:md": "yarn lint:md --fix",
     "commit": "git cz",
-    "lerna": "lerna"
+    "lerna": "lerna",
+    "prepare": ""
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
