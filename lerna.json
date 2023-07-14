@@ -17,8 +17,6 @@
     "version": {
       "message": "ci: publish"
     },
-    "publish": {
-      "conventionalCommits": true
-    }
+    "publish": {}
   }
 }

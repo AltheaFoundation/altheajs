@@ -1,6 +1,6 @@
 {
   "name": "@althea-net/provider",
-  "description": "Simple provider to query the EVMOS rest api.",
+  "description": "Simple provider to query the Althea-L1 rest api.",
   "version": "0.3.1",
   "license": "MIT",
   "main": "dist/index.js",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "@types/node": "^17.0.21"
   },
-  "gitHead": "fc2045b9357bde146e3374429453eb5d4a48a2ca",
+  "gitHead": "af8a71af4aa4923d2e773b5e4043728cfab5ae1f",
   "publishConfig": {
     "access": "public"
   }
