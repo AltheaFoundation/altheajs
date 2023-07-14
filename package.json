@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build": "lerna run --parallel build",
-    "lerna:publish": "lerna publish from-package",
+    "lerna:publish": "lerna publish from-package --loglevel=debug",
     "build:watch": "lerna run --parallel build:watch",
     "build:fresh": "yarn clean && yarn build",
     "build:patch:publish": "yarn build:fresh && yarn patch && yarn lerna:publish",
