@@ -1,7 +1,7 @@
 {
   "name": "@althea-net/proto",
   "description": "Protobuf files for Althea-L1.",
-  "version": "0.2.1",
+  "version": "0.4.0",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
