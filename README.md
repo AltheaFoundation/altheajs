@@ -224,8 +224,8 @@ const tx: TxPayload = createTxMsgSend(context, params)
 Althea-L1 supports EIP-712 signatures for Cosmos payloads to be signed using Ethereum wallets such as MetaMask.
 
 ```ts
-import { createTxRaw } from '@althea-net/altheajs/proto'
-import { evmosToEth } from '@althea-net/altheajs/address-converter'
+import { createTxRaw } from '@althea-net/proto'
+import { altheaToEth } from '@althea-net/address-converter'
 
 // First, populate a TxContext object and create a signable Tx payload.
 // (See 'Create a Signable Transaction' to learn how to create these).

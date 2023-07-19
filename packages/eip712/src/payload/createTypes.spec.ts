@@ -56,6 +56,8 @@ describe('test eip-712 type generation from payload', () => {
   it('generates types for a single-message payload', () => {
     const types = createEIP712Types([msgSend])
 
+    console.log(types)
+
     const expTxTypes = [
       {
         name: 'msg0',
