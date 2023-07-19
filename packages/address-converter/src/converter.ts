@@ -53,6 +53,18 @@ export const bech32Chain = (name: string, prefix: string) => ({
   name,
 })
 
+export const ALTHEA = bech32Chain('ALTHEA', 'althea')
+
+export const ethToAlthea = (ethAddress: string) => {
+  const data = ETH.decoder(ethAddress)
+  return ALTHEA.encoder(data)
+}
+
+export const altheaToEth = (altheaAddress: string) => {
+  const data = ALTHEA.decoder(altheaAddress)
+  return ETH.encoder(data)
+}
+
 export const ETHERMINT = bech32Chain('ETHERMINT', 'ethm')
 
 export const ethToEthermint = (ethAddress: string) => {
