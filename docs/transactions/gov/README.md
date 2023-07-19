@@ -2,7 +2,7 @@
 
 This package creates transaction payloads with messages from the [Gov Module](https://docs.cosmos.network/main/modules/gov).
 
-Find the `TxContext` and `TxPayload` types in the Transaction Docs.
+Find the `TxContext` and `TxGenerated` types in the Transaction Docs.
 
 ### MsgDeposit
 
@@ -30,7 +30,7 @@ export interface MsgDepositParams {
 export const createTxMsgDeposit: (
   context: TxContext,
   params: MsgDepositParams,
-): TxPayload
+): TxGenerated
 ```
 
 ### MsgSubmitProposal
@@ -61,7 +61,7 @@ export interface MsgSubmitProposalParams {
 export const createTxMsgSubmitProposal: (
   context: TxContext,
   params: MsgSubmitProposalParams,
-): TxPayload
+): TxGenerated
 ```
 
 ### MsgVote
@@ -87,5 +87,5 @@ export interface MsgVoteParams {
 export const createTxMsgVote: (
   context: TxContext,
   params: MsgVoteParams,
-): TxPayload
+): TxGenerated
 ```

@@ -2,7 +2,7 @@
 
 This package creates transaction payloads with messages from the [Staking Module](https://docs.cosmos.network/main/modules/staking).
 
-Find the `TxContext` and `TxPayload` types in the Transaction Docs.
+Find the `TxContext` and `TxGenerated` types in the Transaction Docs.
 
 ### MsgBeginRedelegate
 
@@ -29,7 +29,7 @@ export interface MsgBeginRedelegateParams {
 export const createTxMsgBeginRedelegate: (
   context: TxContext,
   params: MsgBeginRedelegateParams,
-): TxPayload
+): TxGenerated
 ```
 
 ### MsgCancelUnbondingDelegation
@@ -58,7 +58,7 @@ export interface MsgCancelUnbondingDelegationParams {
 export const createTxMsgCancelUnbondingDelegation = (
   context: TxContext,
   params: MsgCancelUnbondingDelegationParams,
-): TxPayload
+): TxGenerated
 ```
 
 ### MsgDelegate
@@ -85,7 +85,7 @@ export interface MsgDelegateParams {
 export const createTxMsgDelegate: (
   context: TxContext,
   params: MsgDelegateParams,
-): TxPayload 
+): TxGenerated
 ```
 
 ### Multiple MsgDelegate
@@ -110,7 +110,7 @@ export interface MultipleMsgDelegateParams {
 export const createTxMultipleMsgDelegate: (
   context: TxContext,
   params: MultipleMsgDelegateParams,
-): TxPayload
+): TxGenerated
 ```
 
 ### MsgUndelegate
@@ -137,7 +137,7 @@ export interface MsgUndelegateParams {
 export const createTxMsgUndelegate: (
   context: TxContext,
   params: MsgUndelegateParams,
-): TxPayload 
+): TxGenerated
 ```
 
 ### MsgEditValidator
@@ -169,5 +169,5 @@ export interface MsgEditValidatorParams {
 export const createTxMsgEditValidator: (
   context: TxContext,
   params: MsgEditValidatorParams,
-): TxPayload 
+): TxGenerated
 ```

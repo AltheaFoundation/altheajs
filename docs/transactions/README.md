@@ -15,7 +15,7 @@ View the documentation within each module for the supported transaction payloads
  * @remarks
  * chainId corresponds to a numerical Ethereum ChainID (e.g. 9001)
  * cosmosChainId corresponds to a Cosmos SDK string ChainID (e.g. 'evmos_9001-2'
- */ 
+ */
 export interface Chain {
   chainId: number
   cosmosChainId: string
@@ -31,7 +31,7 @@ export interface Chain {
  * @remarks
  * A sender object is used to populate the Cosmos SDK's SignerInfo field,
  * which is used to declare transaction signers.
- */ 
+ */
 export interface Sender {
   accountAddress: string
   sequence: number
@@ -83,7 +83,7 @@ export interface TxContext {
  * Evmos uses the EIP-712 protocol to wrap Cosmos SDK Transactions for Ethereum signing clients.
  * EIP-712 payload signatures can be used interchangeably with standard Cosmos SDK signatures.
  * Learn more about the {@link https://eips.ethereum.org/EIPS/eip-712 | EIP-712 Standard}
- */ 
+ */
 export interface EIP712ToSign {
   types: object
   primaryType: string
@@ -98,15 +98,15 @@ export interface EIP712ToSign {
 }
 ```
 
-### TxPayload
+### TxGenerated
 
 ```ts
 /**
- * TxPayload is a transaction object with signable payloads
+ * TxGenerated is a transaction object with signable payloads
  * in multiple formats.
  *
  * @remarks
- * TxPayload includes signable payloads for Evmos `EIP-712`,
+ * TxGenerated includes signable payloads for Evmos `EIP-712`,
  * `SignDirect`, and `SignLegacyAmino`.
  *
  * Evmos uses the {@link https://eips.ethereum.org/EIPS/eip-712 | EIP-712 Specification}
@@ -115,7 +115,7 @@ export interface EIP712ToSign {
  * See {@link https://docs.cosmos.network/main/core/encoding} for more
  * on `SignDirect` and `SignLegacyAmino`.
  */
-export interface TxPayload {
+export interface TxGenerated {
   signDirect: {
     body: Proto.Cosmos.Transactions.Tx.TxBody
     authInfo: Proto.Cosmos.Transactions.Tx.AuthInfo

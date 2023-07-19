@@ -176,7 +176,7 @@ import {
   TxContext,
   MsgSendParams,
   createTxMsgSend,
-  TxPayload,
+  TxGenerated,
 } from '@althea-net/transactions'
 
 const chain: Chain = {
@@ -216,7 +216,7 @@ const params: MsgSendParams = {
   denom: 'aalthea',
 }
 
-const tx: TxPayload = createTxMsgSend(context, params)
+const tx: TxGenerated = createTxMsgSend(context, params)
 ```
 
 ### Sign the Transaction with MetaMask

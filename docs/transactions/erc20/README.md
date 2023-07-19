@@ -2,7 +2,7 @@
 
 This package creates transaction payloads with messages from the [ERC-20 Module](https://docs.evmos.org/modules/erc20/).
 
-Find the `TxContext` and `TxPayload` types in the Transaction Docs.
+Find the `TxContext` and `TxGenerated` types in the Transaction Docs.
 
 ### MsgConvertCoin
 
@@ -29,7 +29,7 @@ export interface MsgConvertCoinParams {
 export const createTxMsgConvertCoin: (
   context: TxContext,
   params: MsgConvertCoinParams,
-): TxPayload
+): TxGenerated
 ```
 
 ### MsgConvertERC20
@@ -57,5 +57,5 @@ export interface MsgConvertERC20Params {
 export const createTxMsgConvertERC20: (
   context: TxContext,
   params: MsgConvertERC20Params,
-): TxPayload
+): TxGenerated
 ```

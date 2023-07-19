@@ -60,13 +60,12 @@ export interface Chain {
   chainId: number
   cosmosChainId: string
 }
-
 /**
- * TxPayload is a transaction object with signable payloads
+ * TxGenerated is a transaction object with signable payloads
  * in multiple formats.
  *
  * @remarks
- * TxPayload includes signable payloads for Evmos `EIP-712`,
+ * TxGenerated includes signable payloads for Evmos `EIP-712`,
  * `SignDirect`, and `SignLegacyAmino`.
  *
  * Evmos uses the {@link https://eips.ethereum.org/EIPS/eip-712 | EIP-712 Specification}
@@ -75,7 +74,7 @@ export interface Chain {
  * See {@link https://docs.cosmos.network/main/core/encoding} for more
  * on `SignDirect` and `SignLegacyAmino`.
  */
-export interface TxPayload {
+export interface TxGenerated {
   signDirect: {
     body: Proto.Cosmos.Transactions.Tx.TxBody
     authInfo: Proto.Cosmos.Transactions.Tx.AuthInfo

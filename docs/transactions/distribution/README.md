@@ -2,7 +2,7 @@
 
 This package creates transaction payloads with messages from the [Distribution Module](https://docs.cosmos.network/main/modules/distribution).
 
-Find the `TxContext` and `TxPayload` types in the Transaction Docs.
+Find the `TxContext` and `TxGenerated` types in the Transaction Docs.
 
 ### MsgSetWithdrawAddress
 
@@ -27,7 +27,7 @@ export interface MsgSetWithdrawAddressParams {
 export const createTxMsgSetWithdrawAddress: (
   context: TxContext,
   params: MsgSetWithdrawAddressParams,
-): TxPayload 
+): TxGenerated
 ```
 
 ### MsgWithdrawDelegatorReward
@@ -52,7 +52,7 @@ export interface MsgWithdrawDelegatorRewardParams {
 export const createTxMsgWithdrawDelegatorReward: (
   context: TxContext,
   params: MsgWithdrawDelegatorRewardParams,
-): TxPayload 
+): TxGenerated
 ```
 
 ### Multiple MsgWithdrawDelegatorReward
@@ -77,7 +77,7 @@ export interface MultipleMsgWithdrawDelegatorRewardParams {
 export const createTxMultipleMsgWithdrawDelegatorReward: (
   context: TxContext,
   params: MultipleMsgWithdrawDelegatorRewardParams,
-): TxPayload
+): TxGenerated
 ```
 
 ### MsgWithdrawValidatorCommission
@@ -102,5 +102,5 @@ export interface MsgWithdrawValidatorCommissionParams {
 export const createTxMsgWithdrawValidatorCommission: (
   context: TxContext,
   params: MsgWithdrawValidatorCommissionParams,
-): TxPayload
+): TxGenerated
 ```

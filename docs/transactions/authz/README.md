@@ -2,7 +2,7 @@
 
 This package creates transaction payloads with messages from the [Authz Module](https://docs.cosmos.network/main/modules/authz).
 
-Find the `TxContext` and `TxPayload` types in the Transaction Docs.
+Find the `TxContext` and `TxGenerated` types in the Transaction Docs.
 
 ### Generic MsgGrant
 
@@ -28,7 +28,7 @@ export interface MsgGenericAuthorizationParams {
 export const createTxMsgGenericGrant: (
   context: TxContext,
   params: MsgGenericAuthorizationParams,
-): TxPayload
+): TxGenerated
 ```
 
 ### Generic MsgRevoke
@@ -54,7 +54,7 @@ export interface MsgGenericRevokeParams {
 export const createTxMsgGenericRevoke: (
   context: TxContext,
   params: MsgGenericRevokeParams,
-): TxPayload
+): TxGenerated
 ```
 
 ### Staking MsgGrant
@@ -83,7 +83,7 @@ export interface MsgStakeAuthorizationParams {
 export function createTxMsgStakeAuthorization: (
   context: TxContext,
   params: MsgStakeAuthorizationParams,
-): TxPayload
+): TxGenerated
 ```
 
 ### Staking MsgRevoke
@@ -108,5 +108,5 @@ export interface MsgStakeRevokeAuthorizationParams {
 export function createTxMsgStakeRevokeAuthorization: (
   context: TxContext,
   params: MsgStakeRevokeAuthorizationParams,
-): TxPayload
+): TxGenerated
 ```

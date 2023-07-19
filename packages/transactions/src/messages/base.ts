@@ -6,7 +6,7 @@ import {
 import {
   createTransactionWithMultipleMessages,
 } from '@althea-net/proto'
-import { Chain, Fee, Sender, TxPayload } from './common.js'
+import { Chain, Fee, Sender, TxGenerated } from './common.js'
 
 /**
  * TxContext is the transaction context for a SignDoc that is independent
@@ -104,7 +104,7 @@ export const createTransactionPayload = (
   context: TxContext,
   typedData: EIP712TypedData,
   cosmosMessage: any, // TODO: re-export Protobuf Message type from /proto
-): TxPayload => {
+): TxGenerated => {
   const eip712Payload = createEIP712Payload(context, typedData)
 
   const cosmosPayload = createCosmosPayload(context, cosmosMessage)

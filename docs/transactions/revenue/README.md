@@ -2,7 +2,7 @@
 
 This package creates transaction payloads with messages from the [Revenue Module](https://docs.evmos.org/modules/revenue/).
 
-Find the `TxContext` and `TxPayload` types in the Transaction Docs.
+Find the `TxContext` and `TxGenerated` types in the Transaction Docs.
 
 ### MsgCancelRevenue
 
@@ -27,7 +27,7 @@ export interface MsgCancelRevenueParams {
 export const createTxMsgCancelRevenue: (
   context: TxContext,
   params: MsgCancelRevenueParams,
-): TxPayload 
+): TxGenerated
 ```
 
 ### MsgRegisterRevenue
@@ -55,7 +55,7 @@ export interface MsgRegisterRevenueParams {
 export const createTxMsgRegisterRevenue: (
   context: TxContext,
   params: MsgRegisterRevenueParams,
-): TxPayload
+): TxGenerated
 ```
 
 ### MsgUpdateRevenue
@@ -82,5 +82,5 @@ export interface MsgUpdateRevenueParams {
 export const createTxMsgUpdateRevenue: (
   context: TxContext,
   params: MsgUpdateRevenueParams,
-): TxPayload 
+): TxGenerated
 ```

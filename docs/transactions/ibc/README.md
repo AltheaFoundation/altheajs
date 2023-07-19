@@ -2,7 +2,7 @@
 
 This package creates transaction payloads with messages from the [IBC Module](https://github.com/cosmos/ibc-go/tree/main/docs).
 
-Find the `TxContext` and `TxPayload` types in the Transaction Docs.
+Find the `TxContext` and `TxGenerated` types in the Transaction Docs.
 
 ### MsgTransfer
 
@@ -37,5 +37,5 @@ export interface IBCMsgTransferParams {
 export const createTxIBCMsgTransfer: (
   context: TxContext,
   params: IBCMsgTransferParams,
-): TxPayload 
+): TxGenerated
 ```

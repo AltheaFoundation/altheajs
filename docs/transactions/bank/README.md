@@ -2,7 +2,7 @@
 
 This package creates transaction payloads with messages from the [Bank Module](https://docs.cosmos.network/main/modules/bank).
 
-Find the `TxContext` and `TxPayload` types in the Transaction Docs.
+Find the `TxContext` and `TxGenerated` types in the Transaction Docs.
 
 ### MsgSend
 
@@ -25,5 +25,5 @@ export interface MsgSendParams {
  * @returns Transaction with the MsgSend payload
  *
  */
-export const createTxMsgSend: (context: TxContext, params: MsgSendParams): TxPayload
+export const createTxMsgSend: (context: TxContext, params: MsgSendParams): TxGenerated
 ```

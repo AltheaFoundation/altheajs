@@ -2,7 +2,7 @@
 
 This package creates transaction payloads with messages from the [Vesting Module](https://docs.evmos.org/modules/vesting/).
 
-Find the `TxContext` and `TxPayload` types in the Transaction Docs.
+Find the `TxContext` and `TxGenerated` types in the Transaction Docs.
 
 ### MsgClawback
 
@@ -28,7 +28,7 @@ export interface MsgClawbackParams {
 export const createTxMsgClawback: (
   context: TxContext,
   params: MsgClawbackParams,
-): TxPayload 
+): TxGenerated
 ```
 
 ### MsgCreateClawbackVestingAccount
@@ -58,5 +58,5 @@ export interface MsgCreateClawbackVestingAccountParams {
 export const createTxMsgCreateClawbackVestingAccount: (
   context: TxContext,
   params: MsgCreateClawbackVestingAccountParams,
-): TxPayload 
+): TxGenerated
 ```
