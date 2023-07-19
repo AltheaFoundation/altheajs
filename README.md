@@ -32,10 +32,10 @@ npm install altheajs
 Or:
 
 ```bash
-npm install @althea/<package>
+npm install @althea-net/<package>
 ```
 
-### Yarn v2.x or v3.x
+### Yarn v2.x or v3.attestationx
 
 Add the following to an `.yarnrc.yml` file in your project root:
 
@@ -54,7 +54,7 @@ yarn add altheajs
 Or:
 
 ```bash
-yarn add @althea/<package>
+yarn add @althea-net/<package>
 ```
 
 Note that Yarn v1 is not supported ([see explanation](https://docs.buf.build/bsr/remote-packages/npm#other-package-managers)).
@@ -66,7 +66,7 @@ Note that Yarn v1 is not supported ([see explanation](https://docs.buf.build/bsr
 Query the account number, sequence, and pubkey for a given address.
 
 ```ts
-import { generateEndpointAccount } from '@althea/provider'
+import { generateEndpointAccount } from '@althea-net/provider'
 
 const address = 'althea1...'
 
@@ -88,7 +88,7 @@ const rawResult = await fetch(
 
 const result = await rawResult.json()
 
-// The response format is available at @althea/provider/rest/account/AccountResponse.
+// The response format is available at @althea-net/provider/rest/account/AccountResponse.
 // Note that the `pub_key` will be `null` if the address has not sent any transactions.
 /*
   account: {
@@ -177,7 +177,7 @@ import {
   MsgSendParams,
   createTxMsgSend,
   TxPayload,
-} from '@althea/transactions'
+} from '@althea-net/transactions'
 
 const chain: Chain = {
   chainId: 417834,
