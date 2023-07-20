@@ -1,13 +1,13 @@
-import { MSG_CONVERT_COIN_TYPES, createMsgConvertCoin } from './convertCoin'
+import { MSG_MICROTX_TYPES, createMsgMicrotx } from './microtx'
 import TestUtils from '../../tests/utils'
 
-describe('test MsgConvertCoin types and messages', () => {
+describe('test MsgMicrotx types and messages', () => {
   it('creates types as expected', () => {
     const expTypes = {
       MsgValue: [
-        { name: 'coin', type: 'TypeCoin' },
         { name: 'receiver', type: 'string' },
         { name: 'sender', type: 'string' },
+        { name: 'amount', type: 'TypeCoin' },
       ],
       TypeCoin: [
         { name: 'denom', type: 'string' },
@@ -15,7 +15,7 @@ describe('test MsgConvertCoin types and messages', () => {
       ],
     }
 
-    expect(MSG_CONVERT_COIN_TYPES).toStrictEqual(expTypes)
+    expect(MSG_MICROTX_TYPES).toStrictEqual(expTypes)
   })
 
   it('creates messages as expected', () => {
@@ -24,10 +24,10 @@ describe('test MsgConvertCoin types and messages', () => {
     const senderBech32 = TestUtils.addr1
     const receiverHex = TestUtils.addrHex1
 
-    const msg = createMsgConvertCoin(denom, amount, receiverHex, senderBech32)
+    const msg = createMsgMicrotx(denom, amount, receiverHex, senderBech32)
 
     const expMsg = {
-      type: 'canto/MsgConvertCoin',
+      type: 'althea/MsgMicrotx',
       value: {
         coin: {
           denom,

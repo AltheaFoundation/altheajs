@@ -29,7 +29,7 @@ describe('test MsgConvertERC20 types and messages', () => {
     )
 
     const expMsg = {
-      type: 'evmos/MsgConvertERC20',
+      type: 'canto/MsgConvertERC20',
       value: {
         contract_address: contractAddress,
         amount,

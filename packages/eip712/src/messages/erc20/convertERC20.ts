@@ -14,7 +14,7 @@ export function createMsgConvertERC20(
   sender: string,
 ) {
   return {
-    type: 'evmos/MsgConvertERC20',
+    type: 'canto/MsgConvertERC20',
     value: {
       contract_address: contractAddress,
       amount,

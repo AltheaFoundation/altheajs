@@ -1,8 +1,8 @@
-export const MSG_CONVERT_COIN_TYPES = {
+export const MSG_MICROTX_TYPES = {
   MsgValue: [
-    { name: 'coin', type: 'TypeCoin' },
     { name: 'receiver', type: 'string' },
     { name: 'sender', type: 'string' },
+    { name: 'amount', type: 'TypeCoin' },
   ],
   TypeCoin: [
     { name: 'denom', type: 'string' },
@@ -10,14 +10,14 @@ export const MSG_CONVERT_COIN_TYPES = {
   ],
 }
 
-export function createMsgConvertCoin(
+export function createMsgMicrotx(
   denom: string,
   amount: string,
   receiver: string,
   sender: string,
 ) {
   return {
-    type: 'canto/MsgConvertCoin',
+    type: 'althea/MsgMicrotx',
     value: {
       coin: {
         denom,
