@@ -27,8 +27,8 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@althea-net/eip712": "^0.3.1",
-    "@althea-net/proto": "^0.2.1",
+    "@althea-net/althea-proto": "^0.1.0",
+    "@althea-net/eip712": "^0.4.2",
     "link-module-alias": "^1.2.0",
     "shx": "^0.3.4"
   },

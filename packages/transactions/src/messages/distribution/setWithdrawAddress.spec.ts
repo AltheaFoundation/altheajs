@@ -1,4 +1,4 @@
-import { createMsgSetWithdrawAddress as protoMsgSetWithdrawAddress } from '@althea-net/proto'
+import { MsgSetWithdrawAddress } from '@althea-net/althea-proto/src/codegen/cosmos/distribution/v1beta1/tx.js'
 
 import {
   generateTypes,
@@ -33,10 +33,7 @@ describe('test tx payload', () => {
       message,
     }
 
-    const messageCosmos = protoMsgSetWithdrawAddress(
-      params.delegatorAddress,
-      params.withdrawAddress,
-    )
+    const messageCosmos = MsgSetWithdrawAddress.fromJSON(params)
 
     const payload = createTxMsgSetWithdrawAddress(context, params)
     const expectedPayload = createTransactionPayload(

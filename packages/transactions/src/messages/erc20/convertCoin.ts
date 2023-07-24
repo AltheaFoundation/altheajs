@@ -1,4 +1,4 @@
-import { createMsgConvertCoin as protoMsgConvertCoin } from '@althea-net/proto'
+import { MsgConvertCoin } from '@althea-net/althea-proto/src/codegen/canto/erc20/v1/tx.js'
 
 import {
   generateTypes,
@@ -31,12 +31,11 @@ const createEIP712MsgConvertCoin = (params: MsgConvertCoinParams) => {
 }
 
 const createCosmosMsgConvertCoin = (params: MsgConvertCoinParams) => {
-  return protoMsgConvertCoin(
-    params.denom,
-    params.amount,
-    params.receiverHex,
-    params.senderBech32,
-  )
+  return MsgConvertCoin.fromJSON({
+    coin: {denom: params.denom, amount: params.amount},
+    receiver: params.receiverHex,
+    sender: params.senderBech32,
+  })
 }
 
 /**

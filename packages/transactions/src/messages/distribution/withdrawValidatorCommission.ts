@@ -1,4 +1,4 @@
-import { createMsgWithdrawValidatorCommission as protoMsgWithdrawValidatorCommission } from '@althea-net/proto'
+import { MsgWithdrawValidatorCommission } from '@althea-net/althea-proto/src/codegen/cosmos/distribution/v1beta1/tx.js'
 
 import {
   generateTypes,
@@ -27,7 +27,7 @@ const createEIP712MsgWithdrawValidatorCommission = (
 const createCosmosMsgWithdrawValidatorCommission = (
   params: MsgWithdrawValidatorCommissionParams,
 ) => {
-  return protoMsgWithdrawValidatorCommission(params.validatorAddress)
+  return MsgWithdrawValidatorCommission.fromJSON({validatorAddress: params.validatorAddress})
 }
 
 /**

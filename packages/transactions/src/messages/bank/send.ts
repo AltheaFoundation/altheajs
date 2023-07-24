@@ -1,4 +1,4 @@
-import { createMsgSend as protoMsgSend } from '@althea-net/proto'
+import { MsgSend } from '@althea-net/althea-proto/src/codegen/cosmos/bank/v1beta1/tx.js'
 import { generateTypes, createMsgSend, MSG_SEND_TYPES } from '@althea-net/eip712'
 import { createTransactionPayload, TxContext } from '../base.js'
 
@@ -25,12 +25,7 @@ const createEIP712MsgSend = (context: TxContext, params: MsgSendParams) => {
 }
 
 const createCosmosMsgSend = (context: TxContext, params: MsgSendParams) => {
-  return protoMsgSend(
-    context.sender.accountAddress,
-    params.destinationAddress,
-    params.amount,
-    params.denom,
-  )
+  return MsgSend.fromJSON({ fromAddress: context.sender.accountAddress, toAddress: params.destinationAddress, amount: [{ denom: params.denom, amount: params.amount }] })
 }
 
 /**

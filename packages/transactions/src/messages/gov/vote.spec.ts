@@ -1,4 +1,4 @@
-import { createMsgVote as protoMsgVote } from '@althea-net/proto'
+import { MsgVote } from '@althea-net/althea-proto/src/codegen/cosmos/gov/v1/tx.js'
 import {
   generateTypes,
   createMsgVote,
@@ -27,7 +27,12 @@ describe('test tx payload', () => {
       message,
     }
 
-    const messageCosmos = protoMsgVote(params.proposalId, params.option, sender)
+    const messageCosmos = MsgVote.fromJSON({
+      proposalId: params.proposalId,
+      voter: context.sender.accountAddress,
+      option: params.option,
+      metadata: "",
+    })
 
     const payload = createTxMsgVote(context, params)
     const expectedPayload = createTransactionPayload(

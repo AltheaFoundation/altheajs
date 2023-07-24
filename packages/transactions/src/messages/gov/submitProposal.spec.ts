@@ -1,8 +1,4 @@
-import {
-  createMsgSubmitProposal as protoMsgSubmitProposal,
-  createMsgVote as protoMsgVote,
-  createAnyMessage,
-} from '@althea-net/proto'
+import { createAnyMessage } from '../common'
 import {
   generateTypes,
   createMsgSubmitProposal,
@@ -12,6 +8,7 @@ import {
   MsgSubmitProposalParams,
   createTxMsgSubmitProposal,
 } from './submitProposal'
+import { MsgSubmitProposal, MsgVote } from '@althea-net/althea-proto/src/codegen/cosmos/gov/v1/tx'
 import { createTransactionPayload } from '../base'
 import TestUtils from '../../tests/utils'
 
@@ -21,7 +18,12 @@ const proposer = context.sender.accountAddress
 
 const proposalId = TestUtils.proposalId1
 const option = TestUtils.voteOption1
-const content = protoMsgVote(proposalId, option, proposer)
+const content = MsgVote.fromJSON({
+  proposalId: proposalId,
+  voter: proposer,
+  option: option,
+  metadata: "",
+})
 
 const params: MsgSubmitProposalParams = {
   content,
@@ -50,12 +52,12 @@ describe('test tx payload', () => {
     }
 
     const contentAsAny = createAnyMessage(params.content)
-    const messageCosmos = protoMsgSubmitProposal(
-      contentAsAny,
-      params.denom,
-      params.amount,
-      params.proposer,
-    )
+    const messageCosmos = MsgSubmitProposal.fromJSON({
+      messages: contentAsAny,
+      initialDeposit: {denom: params.denom, amount: params.amount},
+      proposer: params.proposer,
+      metadata: "",
+    })
 
     const payload = createTxMsgSubmitProposal(context, params)
     const expectedPayload = createTransactionPayload(

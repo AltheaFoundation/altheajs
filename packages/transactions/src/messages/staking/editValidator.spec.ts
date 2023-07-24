@@ -1,4 +1,4 @@
-import { createMsgEditValidator as protoMsgEditValidator } from '@althea-net/proto'
+import { MsgEditValidator } from '@althea-net/althea-proto/src/codegen/cosmos/staking/v1beta1/tx'
 import {
   generateTypes,
   createMsgEditValidator,
@@ -33,16 +33,18 @@ describe('test tx payload', () => {
       message,
     }
 
-    const messageCosmos = protoMsgEditValidator(
-      params.moniker,
-      params.identity,
-      params.website,
-      params.securityContact,
-      params.details,
-      params.validatorAddress,
-      params.commissionRate,
-      params.minSelfDelegation,
-    )
+    const messageCosmos = MsgEditValidator.fromJSON({
+    description: {
+      moniker: params.moniker,
+      identity: params.identity,
+      website: params.website,
+      securityContact: params.securityContact,
+      details: params.details,
+    },
+    validatorAddress: params.validatorAddress,
+    commissionRate: params.commissionRate,
+    minSelfDelegation: params.minSelfDelegation,
+  })
 
     const payload = createTxMsgEditValidator(context, params)
     const expectedPayload = createTransactionPayload(

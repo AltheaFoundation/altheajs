@@ -97,3 +97,18 @@ export type Period = {
   length: number
   amount: Coin[]
 }
+
+import { Any } from '@althea-net/althea-proto/src/codegen/google/protobuf/any'
+import { Message, AnyMessage } from '@bufbuild/protobuf'
+
+export interface MessageGenerated<T extends Message<T> = AnyMessage> {
+  message: Message<T>
+  path: string
+}
+
+export function createAnyMessage(msg: MessageGenerated) {
+  return Any.fromJSON({
+    typeUrl: `/${msg.path}`,
+    value: msg.message.toBinary(),
+  })
+}

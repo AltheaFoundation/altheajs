@@ -1,5 +1,4 @@
-import { createMsgVote as protoMsgVote } from '@althea-net/proto'
-
+import { MsgVote } from '@althea-net/althea-proto/src/codegen/cosmos/gov/v1/tx.js'
 import {
   generateTypes,
   createMsgVote,
@@ -27,12 +26,13 @@ const createEIP712MsgVote = (context: TxContext, params: MsgVoteParams) => {
   }
 }
 
-const createCosmosMsgVote = (context: TxContext, params: MsgVoteParams) => {
-  return protoMsgVote(
-    params.proposalId,
-    params.option,
-    context.sender.accountAddress,
-  )
+export const createCosmosMsgVote = (context: TxContext, params: MsgVoteParams) => {
+  return MsgVote.fromJSON({
+    proposalId: params.proposalId,
+    voter: context.sender.accountAddress,
+    option: params.option,
+    metadata: "",
+  })
 }
 
 /**

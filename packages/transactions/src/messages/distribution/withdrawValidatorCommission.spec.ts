@@ -1,4 +1,5 @@
-import { createMsgWithdrawValidatorCommission as protoMsgWithdrawValidatorCommission } from '@althea-net/proto'
+import { MsgWithdrawValidatorCommission } from '@althea-net/althea-proto/src/codegen/cosmos/distribution/v1beta1/tx.js'
+
 
 import {
   generateTypes,
@@ -30,9 +31,7 @@ describe('test tx payload', () => {
       message,
     }
 
-    const messageCosmos = protoMsgWithdrawValidatorCommission(
-      params.validatorAddress,
-    )
+    const messageCosmos = MsgWithdrawValidatorCommission.fromJSON(params)
 
     const payload = createTxMsgWithdrawValidatorCommission(context, params)
     const expectedPayload = createTransactionPayload(

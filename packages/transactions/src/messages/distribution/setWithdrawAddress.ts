@@ -1,4 +1,4 @@
-import { createMsgSetWithdrawAddress as protoMsgSetWithdrawAddress } from '@althea-net/proto'
+import { MsgSetWithdrawAddress } from '@althea-net/althea-proto/src/codegen/cosmos/distribution/v1beta1/tx.js'
 
 import {
   generateTypes,
@@ -31,10 +31,7 @@ const createEIP712MsgSetWithdrawAddress = (
 const createCosmosMsgSetWithdrawAddress = (
   params: MsgSetWithdrawAddressParams,
 ) => {
-  return protoMsgSetWithdrawAddress(
-    params.delegatorAddress,
-    params.withdrawAddress,
-  )
+  return MsgSetWithdrawAddress.fromJSON({delegatorAddress: params.delegatorAddress, validatorAddress: params.withdrawAddress})
 }
 
 /**
