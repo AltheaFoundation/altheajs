@@ -1,8 +1,8 @@
-import { MsgConvertCoin, MsgConvertERC20 } from '../../proto/evmos/erc20/tx.js'
+import { MsgConvertCoin, MsgConvertERC20 } from '../../proto/canto/erc20/v1/tx_pb.js'
 import {
   RegisterCoinProposal,
   RegisterERC20Proposal,
-} from '../../proto/evmos/erc20/erc20.js'
+} from '../../proto/canto/erc20/v1/erc20_pb.js'
 
 export const erc20RegistryTypes = [
   MsgConvertCoin,

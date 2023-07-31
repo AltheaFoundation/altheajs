@@ -1,5 +1,5 @@
 import { AminoConverters } from '@cosmjs/stargate'
-import { MsgConvertCoin, MsgConvertERC20 } from '../../proto/evmos/erc20/tx.js'
+import { MsgConvertCoin, MsgConvertERC20 } from '../../proto/canto/erc20/v1/tx_pb.js'
 import { createAminoConverter } from '../../amino/objectConverter.js'
 
 // TODO: Add MsgUpdateParams registration when type is added

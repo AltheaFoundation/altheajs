@@ -1,10 +1,10 @@
 import { erc20RegistryTypes } from './registry'
 
-import { MsgConvertCoin, MsgConvertERC20 } from '../../proto/evmos/erc20/tx'
+import { MsgConvertCoin, MsgConvertERC20 } from '../../proto/canto/erc20/v1/tx_pb'
 import {
   RegisterCoinProposal,
   RegisterERC20Proposal,
-} from '../../proto/evmos/erc20/erc20'
+} from '../../proto/canto/erc20/v1/erc20_pb'
 
 describe('test erc20 registry types against expected', () => {
   it('exactly equals expected types', () => {

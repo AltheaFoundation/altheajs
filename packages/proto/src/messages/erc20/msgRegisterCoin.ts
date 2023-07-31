@@ -1,5 +1,5 @@
 import { Metadata } from '../../proto/cosmos/bank/bank.js'
-import { RegisterCoinProposal } from '../../proto/evmos/erc20/erc20.js'
+import { RegisterCoinProposal } from '../../proto/canto/erc20/v1/erc20_pb.js'
 
 export function createMsgRegisterCoin(
   title: string,

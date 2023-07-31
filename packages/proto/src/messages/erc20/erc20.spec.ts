@@ -4,11 +4,11 @@ import { createMsgConvertERC20 } from './msgConvertERC20'
 import { createMsgRegisterERC20 } from './msgRegisterERC20'
 import { createMsgRegisterCoin } from './msgRegisterCoin'
 
-import { MsgConvertCoin, MsgConvertERC20 } from '../../proto/evmos/erc20/tx'
+import { MsgConvertCoin, MsgConvertERC20 } from '../../proto/canto/erc20/v1/tx_pb'
 import {
   RegisterERC20Proposal,
   RegisterCoinProposal,
-} from '../../proto/evmos/erc20/erc20'
+} from '../../proto/canto/erc20/v1/erc20_pb'
 
 import { from, to, denom, hex, ibcDenom } from '../../proto/tests/utils'
 import { JSONOptions } from '../../registry/registry'
@@ -45,7 +45,7 @@ describe('test ERC20 Module message generation', () => {
   it('correctly wraps msgRegisterERC20', () => {
     const title = 'Register Test ERC20'
     const description = title
-    const msg = createMsgRegisterERC20(title, description, [hex])
+    const msg = createMsgRegisterERC20(title, description, hex)
 
     expect(msg.message.toJson(JSONOptions)).toStrictEqual({
       title,

@@ -1,14 +1,14 @@
-import { RegisterERC20Proposal } from '../../proto/evmos/erc20/erc20.js'
+import { RegisterERC20Proposal } from '../../proto/canto/erc20/v1/erc20_pb.js'
 
 export function createMsgRegisterERC20(
   title: string,
   description: string,
-  erc20addresses: string[],
+  erc20address: string,
 ) {
   const msg = new RegisterERC20Proposal({
     title,
     description,
-    erc20addresses,
+    erc20address,
   })
 
   return {

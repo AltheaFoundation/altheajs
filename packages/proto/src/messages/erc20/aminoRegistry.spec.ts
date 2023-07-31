@@ -2,7 +2,7 @@ import { createERC20AminoConverters } from './aminoRegistry'
 import {
   MsgConvertCoin,
   MsgConvertERC20,
-} from '../../proto/althea-net/erc20/tx'
+} from '../../proto/canto/erc20/v1/tx_pb'
 import { createAminoConverter } from '../../amino/objectConverter'
 import { expectEqualsDefaultAminoConverters } from '../../../testutils/compareAminoRegistry'
 
