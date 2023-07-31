@@ -3,7 +3,7 @@ import {
   LegacyTx,
   AccessListTx,
   DynamicFeeTx,
-} from '../../proto/ethermint/evm/tx.js'
+} from '../../proto/ethermint/evm/v1/tx_pb'
 
 export function bytesToMsgEthereumTx(bytes: Uint8Array) {
   return MsgEthereumTx.fromBinary(bytes)

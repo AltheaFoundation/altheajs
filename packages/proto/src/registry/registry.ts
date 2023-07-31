@@ -9,10 +9,9 @@ import {
   evmRegistryTypes,
   govRegistryTypes,
   ibcRegistryTypes,
-  revenueRegistryTypes,
+  microtxRegistryTypes,
   stakingRegistryTypes,
   transactionsRegistryTypes,
-  vestingRegistryTypes,
 } from '../messages/index.js'
 
 const parseType = (registryTypes: MessageType[], typeName: string) => {
@@ -34,10 +33,9 @@ export const registryTypes = [
   ...evmRegistryTypes,
   ...govRegistryTypes,
   ...ibcRegistryTypes,
-  ...revenueRegistryTypes,
+  ...microtxRegistryTypes,
   ...stakingRegistryTypes,
   ...transactionsRegistryTypes,
-  ...vestingRegistryTypes,
 ]
 
 export const registry = {

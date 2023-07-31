@@ -1,6 +1,6 @@
 import { createWeb3Extension } from './web3Extension'
 
-import { ExtensionOptionsWeb3Tx } from '../../proto/ethermint/types/web3'
+import { ExtensionOptionsWeb3Tx } from '../../proto/ethermint/types/v1/web3_pb'
 
 import { from } from '../../proto/tests/utils'
 import { JSONOptions } from '../../registry/registry'

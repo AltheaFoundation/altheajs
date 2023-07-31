@@ -1,18 +1,16 @@
 import { evmRegistryTypes } from './registry'
 
-import { ExtensionOptionDynamicFeeTx } from '../../proto/ethermint/types/dynamicFee'
 import {
   MsgEthereumTx,
   LegacyTx,
   AccessListTx,
   DynamicFeeTx,
-} from '../../proto/ethermint/evm/tx'
-import { ExtensionOptionsWeb3Tx } from '../../proto/ethermint/types/web3'
+} from '../../proto/ethermint/evm/v1/tx_pb'
+import { ExtensionOptionsWeb3Tx } from '../../proto/ethermint/types/v1/web3_pb'
 
 describe('test evm registry types against expected', () => {
   it('exactly equals expected types', () => {
     expect(evmRegistryTypes).toStrictEqual([
-      ExtensionOptionDynamicFeeTx,
       MsgEthereumTx,
       LegacyTx,
       AccessListTx,

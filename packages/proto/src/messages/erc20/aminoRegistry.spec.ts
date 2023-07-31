@@ -10,8 +10,8 @@ describe('test erc20 amino converters', () => {
   it('creates expected amino converters', () => {
     const aminoConverters = createERC20AminoConverters()
     const expAminoConverters = {
-      ...createAminoConverter(MsgConvertCoin, 'evmos/MsgConvertCoin'),
-      ...createAminoConverter(MsgConvertERC20, 'evmos/MsgConvertERC20'),
+      ...createAminoConverter(MsgConvertCoin, 'canto/MsgConvertCoin'),
+      ...createAminoConverter(MsgConvertERC20, 'canto/MsgConvertERC20'),
     }
 
     expectEqualsDefaultAminoConverters(aminoConverters, expAminoConverters)

@@ -6,7 +6,7 @@ import {
   bytesToTxRaw,
 } from '../transactions/txRaw'
 
-import { MsgEthereumTx, LegacyTx } from '../../proto/ethermint/evm/tx'
+import { MsgEthereumTx, LegacyTx } from '../../proto/ethermint/evm/v1/tx_pb'
 
 import { JSONOptions } from '../../registry/registry'
 
