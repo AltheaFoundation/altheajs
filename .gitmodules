@@ -1,0 +1,3 @@
+[submodule "althea-proto-src"]
+	path = althea-proto-src
+	url = https://github.com/althea-net/althea-L1
