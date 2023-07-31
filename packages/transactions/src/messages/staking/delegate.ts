@@ -1,4 +1,4 @@
-import { MsgDelegate } from '@althea-net/althea-proto/src/codegen/cosmos/staking/v1beta1/tx.js'
+import { createMsgDelegate as protoMsgDelegate } from '@althea-net/proto'
 
 import {
   generateTypes,
@@ -37,11 +37,12 @@ const createCosmosMsgDelegate = (
   context: TxContext,
   params: MsgDelegateParams,
 ) => {
-  return MsgDelegate.fromJSON({
-    delegatorAddress: context.sender.accountAddress,
-    validatorAddress: params.validatorAddress,
-    amount: {amount: params.amount, denom: params.denom},
-  })
+  return protoMsgDelegate(
+    context.sender.accountAddress,
+    params.validatorAddress,
+    params.amount,
+    params.denom,
+  )
 }
 
 /**

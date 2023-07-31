@@ -1,4 +1,4 @@
-import { MsgConvertERC20 } from '@althea-net/althea-proto/src/codegen/canto/erc20/v1/tx.js'
+import { createMsgConvertERC20 as protoMsgConvertERC20 } from '@althea-net/proto'
 
 import {
   generateTypes,
@@ -31,12 +31,12 @@ const createEIP712MsgConvertERC20 = (params: MsgConvertERC20Params) => {
 }
 
 const createCosmosMsgConvertERC20 = (params: MsgConvertERC20Params) => {
-  return MsgConvertERC20.fromJSON({
-    contractAddress: params.contractAddress,
-    amount: params.amount,
-    receiver: params.receiverBech32,
-    sender: params.senderHex,
-  })
+  return protoMsgConvertERC20(
+    params.contractAddress,
+    params.amount,
+    params.receiverBech32,
+    params.senderHex,
+  )
 }
 
 /**

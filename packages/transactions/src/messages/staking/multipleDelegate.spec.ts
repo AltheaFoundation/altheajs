@@ -1,4 +1,4 @@
-import { MsgDelegate } from '@althea-net/althea-proto/src/codegen/cosmos/staking/v1beta1/tx'
+import { createMsgDelegate as protoMsgDelegate } from '@althea-net/proto'
 
 import {
   generateTypes,
@@ -51,11 +51,12 @@ describe('test tx payload', () => {
     }
 
     const messagesCosmos = params.values.map((delegateParams) =>
-    MsgDelegate.fromJSON({
-      delegatorAddress: context.sender.accountAddress,
-      validatorAddress: delegateParams.validatorAddress,
-      amount: {amount: delegateParams.amount, denom: delegateParams.denom},
-    }),
+      protoMsgDelegate(
+        context.sender.accountAddress,
+        delegateParams.validatorAddress,
+        delegateParams.amount,
+        delegateParams.denom,
+      ),
     )
     expect(messagesCosmos).toHaveLength(multipleMsgDelegateParams.length)
 

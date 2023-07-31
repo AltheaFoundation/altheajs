@@ -1,4 +1,4 @@
-import { MsgUndelegate } from '@althea-net/althea-proto/src/codegen/cosmos/staking/v1beta1/tx'
+import { createMsgUndelegate as protoMsgUndelegate } from '@althea-net/proto'
 import {
   generateTypes,
   createMsgUndelegate,
@@ -32,12 +32,12 @@ describe('test tx payload', () => {
       message,
     }
 
-    const messageCosmos = MsgUndelegate.fromJSON({
-    delegatorAddress: context.sender.accountAddress,
-    validatorAddress: params.validatorAddress,
-    amount: {amount: params.amount, denom: params.denom}
-  })
-
+    const messageCosmos = protoMsgUndelegate(
+      context.sender.accountAddress,
+      params.validatorAddress,
+      params.amount,
+      params.denom,
+    )
 
     const payload = createTxMsgUndelegate(context, params)
     const expectedPayload = createTransactionPayload(

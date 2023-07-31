@@ -1,4 +1,4 @@
-import { MsgDelegate } from '@althea-net/althea-proto/src/codegen/cosmos/staking/v1beta1/tx.js'
+import { createMsgDelegate as protoMsgDelegate } from '@althea-net/proto'
 
 import {
   generateTypes,
@@ -38,11 +38,12 @@ const createCosmosMultipleMsgDelegate = (
   params: MultipleMsgDelegateParams,
 ) => {
   return params.values.map((delegateParams) =>
-    MsgDelegate.fromJSON({
-      delegatorAddress: context.sender.accountAddress,
-      validatorAddress: delegateParams.validatorAddress,
-      amount: {amount: delegateParams.amount, denom: delegateParams.denom},
-    }),
+    protoMsgDelegate(
+      context.sender.accountAddress,
+      delegateParams.validatorAddress,
+      delegateParams.amount,
+      delegateParams.denom,
+    ),
   )
 }
 

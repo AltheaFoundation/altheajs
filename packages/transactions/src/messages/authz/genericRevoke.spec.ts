@@ -1,6 +1,4 @@
-import {
-  MsgRevoke
-} from '@althea-net/althea-proto/src/codegen/cosmos/authz/v1beta1/tx.js'
+import { createMsgRevoke } from '@althea-net/proto'
 
 import {
   generateTypes,
@@ -37,11 +35,11 @@ describe('test tx payload', () => {
       message,
     }
 
-    const messageCosmos = MsgRevoke.fromJSON({
-      granter: context.sender.accountAddress,
-      grantee: params.granteeAddress,
-      msg_type_url: params.typeUrl,
-    })
+    const messageCosmos = createMsgRevoke(
+      context.sender.accountAddress,
+      params.granteeAddress,
+      params.typeUrl,
+    )
 
     const payload = createTxMsgGenericRevoke(context, params)
 

@@ -1,6 +1,7 @@
-import { createAnyMessage } from '../common.js'
-import { MsgSubmitProposal } from '@althea-net/althea-proto/src/codegen/cosmos/gov/v1/tx.js'
-
+import {
+  createMsgSubmitProposal as protoMsgSubmitProposal,
+  createAnyMessage,
+} from '@althea-net/proto'
 import {
   generateTypes,
   createMsgSubmitProposal,
@@ -36,14 +37,14 @@ const createEIP712MsgSubmitProposal = (params: MsgSubmitProposalParams) => {
 }
 
 const createCosmosMsgSubmitProposal = (params: MsgSubmitProposalParams) => {
-  const contentAsAny = [createAnyMessage(params.content)]
+  const contentAsAny = createAnyMessage(params.content)
 
-  MsgSubmitProposal.fromJSON({
-    messages: contentAsAny,
-    initialDeposit: {denom: params.denom, amount: params.amount},
-    proposer: params.proposer,
-    metadata: "",
-  })
+  return protoMsgSubmitProposal(
+    contentAsAny,
+    params.denom,
+    params.amount,
+    params.proposer,
+  )
 }
 
 /**

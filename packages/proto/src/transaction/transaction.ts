@@ -12,11 +12,12 @@ import {
   AuthInfo,
   SignDoc,
 } from '../proto/cosmos/transactions/tx.js'
-import { PubKey } from '../proto/ethermint/crypto/keys.js'
+import { PubKey } from '../proto/ethermint/crypto/v1/ethsecp256k1/keys_pb.js'
 import { PubKey as SECP256k1 } from '../proto/cosmos/crypto/secp256k1/keys.js'
 import { SignMode } from '../proto/cosmos/transactions/signing.js'
 import { AminoTypes } from '../amino/registry.js'
 import { convertProtoMessageToObject } from '../amino/objectConverter.js'
+import { MessageGenerated, createAnyMessage } from '../messages/common.js'
 
 
 export const SIGN_DIRECT = SignMode.DIRECT

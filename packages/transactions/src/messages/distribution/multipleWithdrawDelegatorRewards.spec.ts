@@ -1,4 +1,4 @@
-import { MsgWithdrawDelegatorReward } from '@althea-net/althea-proto/src/codegen/cosmos/distribution/v1beta1/tx.js'
+import { createMsgWithdrawDelegatorReward as protoMsgWithdrawDelegatorReward } from '@althea-net/proto'
 
 import {
   generateTypes,
@@ -31,7 +31,7 @@ describe('test tx payload', () => {
     }
 
     const messagesCosmos = params.validatorAddresses.map((valAddr) =>
-      MsgWithdrawDelegatorReward.fromJSON({delegatorAddress: context.sender.accountAddress, validatorAddress: valAddr})
+      protoMsgWithdrawDelegatorReward(context.sender.accountAddress, valAddr),
     )
 
     const payload = createTxMultipleMsgWithdrawDelegatorReward(context, params)

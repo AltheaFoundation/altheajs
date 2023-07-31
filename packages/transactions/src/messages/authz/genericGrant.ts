@@ -1,13 +1,11 @@
 import {
-  MsgGrant
-} from '@althea-net/althea-proto/src/codegen/cosmos/authz/v1beta1/tx.js'
-import {
-  Grant, GenericAuthorization
-} from '@althea-net/althea-proto/src/codegen/cosmos/authz/v1beta1/authz.js'
-
+  createGenericAuthorization as protoCreateGenericAuthorization,
+  createMsgGrant,
+} from '@althea-net/proto'
 
 import {
   generateTypes,
+  createMsgGenericAuthorization,
   MSG_GENERIC_AUTHORIZATION_TYPES,
 } from '@althea-net/eip712'
 import { createTransactionPayload, TxContext } from '../base.js'
@@ -24,7 +22,12 @@ const createEIP712MsgGenericGrant = (
 ) => {
   const types = generateTypes(MSG_GENERIC_AUTHORIZATION_TYPES)
 
-  const message = createCosmosMsgGenericGrant(context, params)
+  const message = createMsgGenericAuthorization(
+    context.sender.accountAddress,
+    params.granteeAddress,
+    params.typeUrl,
+    params.expires,
+  )
 
   return {
     types,
@@ -36,18 +39,14 @@ const createCosmosMsgGenericGrant = (
   context: TxContext,
   params: MsgGenericAuthorizationParams,
 ) => {
-  const authz = GenericAuthorization.fromJSON({
-    msg: params.typeUrl,
-  })
-  const grant = Grant.fromJSON({
-    authorization: authz,
-    expiration: params.expires,
-  })
-  return MsgGrant.fromJSON({
-    granter: context.sender.accountAddress,
-    grantee: params.granteeAddress,
-    grant,
-  })
+  const msgGenericGrant = protoCreateGenericAuthorization(params.typeUrl)
+
+  return createMsgGrant(
+    context.sender.accountAddress,
+    params.granteeAddress,
+    msgGenericGrant,
+    params.expires,
+  )
 }
 
 /**

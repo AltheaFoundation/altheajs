@@ -1,4 +1,4 @@
-import { MsgDeposit } from '@althea-net/althea-proto/src/codegen/cosmos/gov/v1/tx.js'
+import { createMsgDeposit as protoMsgDeposit } from '@althea-net/proto'
 import {
   generateTypes,
   createMsgDeposit,
@@ -34,7 +34,11 @@ describe('test tx payload', () => {
       message,
     }
 
-    const messageCosmos = MsgDeposit.fromJSON({proposalId: params.proposalId, depositor: context.sender.accountAddress, amount: params.deposit})
+    const messageCosmos = protoMsgDeposit(
+      params.proposalId,
+      context.sender.accountAddress,
+      params.deposit,
+    )
 
     const payload = createTxMsgDeposit(context, params)
     const expectedPayload = createTransactionPayload(

@@ -1,10 +1,7 @@
 import {
-  MsgGrant
-} from '@althea-net/althea-proto/src/codegen/cosmos/authz/v1beta1/tx.js'
-import {
-  Grant, GenericAuthorization
-} from '@althea-net/althea-proto/src/codegen/cosmos/authz/v1beta1/authz.js'
-
+  createGenericAuthorization as protoCreateGenericAuthorization,
+  createMsgGrant,
+} from '@althea-net/proto'
 
 import {
   generateTypes,
@@ -44,18 +41,13 @@ describe('test tx payload', () => {
       message,
     }
 
-    const authz = GenericAuthorization.fromJSON({
-      msg: params.typeUrl,
-    })
-    const grant = Grant.fromJSON({
-      authorization: authz,
-      expiration: params.expires,
-    })
-    const messageCosmos = MsgGrant.fromJSON({
-      granter: context.sender.accountAddress,
-      grantee: params.granteeAddress,
+    const grant = protoCreateGenericAuthorization(params.typeUrl)
+    const messageCosmos = createMsgGrant(
+      context.sender.accountAddress,
+      params.granteeAddress,
       grant,
-    })
+      params.expires,
+    )
 
     const payload = createTxMsgGenericGrant(context, params)
     const expectedPayload = createTransactionPayload(

@@ -1,5 +1,5 @@
-import { PubKey } from '../proto/ethermint/crypto/keys.js'
-import { EthAccount } from '../proto/ethermint/types/account.js'
+import { PubKey } from '../proto/ethermint/crypto/v1/ethsecp256k1/keys_pb'
+import { EthAccount } from '../proto/ethermint/types/v1/account_pb'
 
 export const decodeEthSecp256k1PubKey = (key: any) => {
   const { typeUrl, value } = key

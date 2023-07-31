@@ -2,11 +2,15 @@ import {
   createEIP712,
   generateFee,
   generateMessageWithMultipleTransactions,
+  createTypedData,
 } from '@althea-net/eip712'
 import {
   createTransactionWithMultipleMessages,
+  MessageGenerated,
+  createStdFee,
+  createStdSignDocFromProto,
 } from '@althea-net/proto'
-import { Chain, Fee, Sender, TxGenerated } from './common.js'
+import { Chain, Fee, Sender, TxPayload } from './common.js'
 
 /**
  * TxContext is the transaction context for a SignDoc that is independent
@@ -41,7 +45,7 @@ const wrapTypeToArray = <T>(obj: T | T[]) => {
   return Array.isArray(obj) ? obj : [obj]
 }
 
-const createEIP712Payload = (
+const createLegacyEIP712Payload = (
   context: TxContext,
   typedData: EIP712TypedData,
 ) => {
@@ -66,6 +70,30 @@ const createEIP712Payload = (
   )
 
   return createEIP712(typedData.types, chain.chainId, messages)
+}
+
+const createEIP712TypedData = (
+  context: TxContext,
+  protoMsgs: MessageGenerated | MessageGenerated[],
+) => {
+  const { fee, sender, chain, memo } = context
+  const protoMsgsArray = wrapTypeToArray(protoMsgs)
+
+  try {
+    const stdFee = createStdFee(fee.amount, fee.denom, parseInt(fee.gas, 10))
+    const stdSignDoc = createStdSignDocFromProto(
+      protoMsgsArray,
+      stdFee,
+      chain.cosmosChainId,
+      memo,
+      sender.sequence,
+      sender.accountNumber,
+    )
+
+    return createTypedData(chain.chainId, stdSignDoc)
+  } catch {
+    return undefined
+  }
 }
 
 const createCosmosPayload = (
@@ -104,10 +132,24 @@ export const createTransactionPayload = (
   context: TxContext,
   typedData: EIP712TypedData,
   cosmosMessage: any, // TODO: re-export Protobuf Message type from /proto
-): TxGenerated => {
-  const eip712Payload = createEIP712Payload(context, typedData)
+): TxPayload => {
+  const eip712Payload = createLegacyEIP712Payload(context, typedData)
 
   const cosmosPayload = createCosmosPayload(context, cosmosMessage)
+
+  return {
+    signDirect: cosmosPayload.signDirect,
+    legacyAmino: cosmosPayload.legacyAmino,
+    eipToSign: eip712Payload,
+  }
+}
+
+export const newCreateTransactionPayload = (
+  context: TxContext,
+  messages: MessageGenerated | MessageGenerated[],
+) => {
+  const cosmosPayload = createCosmosPayload(context, messages)
+  const eip712Payload = createEIP712TypedData(context, messages)
 
   return {
     signDirect: cosmosPayload.signDirect,

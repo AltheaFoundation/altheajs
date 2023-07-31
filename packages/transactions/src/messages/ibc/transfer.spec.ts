@@ -1,4 +1,4 @@
-import { MsgTransfer } from '@althea-net/althea-proto/src/codegen/ibc/applications/transfer/v1/tx'
+import { createIBCMsgTransfer as protoIBCMsgTransfer } from '@althea-net/proto'
 import {
   generateTypes,
   createIBCMsgTransfer,
@@ -18,6 +18,7 @@ const receiver = TestUtils.addr2
 const revisionNumber = 42
 const revisionHeight = 84
 const timeoutTimestamp = '10000'
+const memo = 'ibc transfer memo'
 
 const params: IBCMsgTransferParams = {
   sourcePort,
@@ -28,10 +29,11 @@ const params: IBCMsgTransferParams = {
   revisionNumber,
   revisionHeight,
   timeoutTimestamp,
+  memo,
 }
 
 const testCreatePayload = (params: IBCMsgTransferParams) => {
-  const msgTypes = CREATE_IBC_MSG_TRANSFER_TYPES()
+  const msgTypes = CREATE_IBC_MSG_TRANSFER_TYPES(params.memo)
   const types = generateTypes(msgTypes)
 
   const message = createIBCMsgTransfer(
@@ -44,21 +46,25 @@ const testCreatePayload = (params: IBCMsgTransferParams) => {
     params.timeoutTimestamp,
     params.amount,
     params.denom,
+    params.memo,
   )
   const typedData = {
     types,
     message,
   }
 
-  const messageCosmos = MsgTransfer.fromJSON({
-    sourcePort: params.sourcePort,
-    sourceChannel: params.sourceChannel,
-    token: { amount: params.amount, denom: params.denom},
-    sender: context.sender.accountAddress,
-    receiver: params.receiver,
-    timeoutHeight: {revisionNumber: params.revisionNumber, revisionHeight: params.revisionHeight},
-    timeoutTimestamp: params.timeoutTimestamp,
-  })
+  const messageCosmos = protoIBCMsgTransfer(
+    params.sourcePort,
+    params.sourceChannel,
+    params.amount,
+    params.denom,
+    sender,
+    params.receiver,
+    params.revisionNumber,
+    params.revisionHeight,
+    params.timeoutTimestamp,
+    params.memo,
+  )
 
   const payload = createTxIBCMsgTransfer(context, params)
   const expectedPayload = createTransactionPayload(

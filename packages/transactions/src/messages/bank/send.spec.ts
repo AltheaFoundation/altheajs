@@ -1,9 +1,5 @@
-import { MsgSend } from '@althea-net/althea-proto/types/codegen/cosmos/bank/v1beta1/tx'
-import {
-  generateTypes,
-  createMsgSend,
-  MSG_SEND_TYPES,
-} from '@althea-net/eip712'
+import { createMsgSend as protoMsgSend } from '@althea-net/proto'
+import { generateTypes, createMsgSend, MSG_SEND_TYPES } from '@althea-net/eip712'
 import { MsgSendParams, createTxMsgSend } from './send'
 import { createTransactionPayload } from '../base'
 import TestUtils from '../../tests/utils'
@@ -32,7 +28,12 @@ describe('test tx payload', () => {
       message,
     }
 
-    const messageCosmos = MsgSend.fromJSON({ fromAddress: context.sender.accountAddress, toAddress: params.destinationAddress, amount: [{ denom: params.denom, amount: params.amount }] })
+    const messageCosmos = protoMsgSend(
+      context.sender.accountAddress,
+      params.destinationAddress,
+      params.amount,
+      params.denom,
+    )
 
     const payload = createTxMsgSend(context, params)
     const expectedPayload = createTransactionPayload(

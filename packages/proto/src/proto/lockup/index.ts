@@ -1,1 +1,1 @@
-export * as Genesis from './genesis_pb.js'
+export * as Genesis from './v1/genesis_pb'

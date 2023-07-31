@@ -1,4 +1,4 @@
-import { MsgEditValidator } from '@althea-net/althea-proto/src/codegen/cosmos/staking/v1beta1/tx.js'
+import { createMsgEditValidator as protoMsgEditValidator } from '@althea-net/proto'
 
 import {
   generateTypes,
@@ -40,18 +40,16 @@ const createEIP712MsgEditValidator = (params: MsgEditValidatorParams) => {
 }
 
 const createCosmosMsgEditValidator = (params: MsgEditValidatorParams) => {
-  return MsgEditValidator.fromJSON({
-    description: {
-      moniker: params.moniker,
-      identity: params.identity,
-      website: params.website,
-      securityContact: params.securityContact,
-      details: params.details,
-    },
-    validatorAddress: params.validatorAddress,
-    commissionRate: params.commissionRate,
-    minSelfDelegation: params.minSelfDelegation,
-  })
+  return protoMsgEditValidator(
+    params.moniker,
+    params.identity,
+    params.website,
+    params.securityContact,
+    params.details,
+    params.validatorAddress,
+    params.commissionRate,
+    params.minSelfDelegation,
+  )
 }
 
 /**

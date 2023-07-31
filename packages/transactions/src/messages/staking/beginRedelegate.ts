@@ -1,4 +1,5 @@
-import { MsgBeginRedelegate } from '@althea-net/althea-proto/types/codegen/cosmos/staking/v1beta1/tx.js'
+import { createMsgBeginRedelegate as protoMsgBeginRedelegate } from '@althea-net/proto'
+
 import {
   generateTypes,
   MSG_BEGIN_REDELEGATE_TYPES,
@@ -38,12 +39,13 @@ const createCosmosMsgBeginRedelegate = (
   context: TxContext,
   params: MsgBeginRedelegateParams,
 ) => {
-  return MsgBeginRedelegate.fromJSON({
-    delegatorAddress: context.sender.accountAddress,
-    validatorSrcAddress: params.validatorSrcAddress,
-    validatorDstAddress: params.validatorDstAddress,
-    amount: {amount: params.amount, denom: params.denom},
-  })
+  return protoMsgBeginRedelegate(
+    context.sender.accountAddress,
+    params.validatorSrcAddress,
+    params.validatorDstAddress,
+    params.amount,
+    params.denom,
+  )
 }
 
 /**

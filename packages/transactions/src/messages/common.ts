@@ -60,12 +60,13 @@ export interface Chain {
   chainId: number
   cosmosChainId: string
 }
+
 /**
- * TxGenerated is a transaction object with signable payloads
+ * TxPayload is a transaction object with signable payloads
  * in multiple formats.
  *
  * @remarks
- * TxGenerated includes signable payloads for Evmos `EIP-712`,
+ * TxPayload includes signable payloads for Evmos `EIP-712`,
  * `SignDirect`, and `SignLegacyAmino`.
  *
  * Evmos uses the {@link https://eips.ethereum.org/EIPS/eip-712 | EIP-712 Specification}
@@ -74,7 +75,7 @@ export interface Chain {
  * See {@link https://docs.cosmos.network/main/core/encoding} for more
  * on `SignDirect` and `SignLegacyAmino`.
  */
-export interface TxGenerated {
+export interface TxPayload {
   signDirect: {
     body: Proto.Cosmos.Transactions.Tx.TxBody
     authInfo: Proto.Cosmos.Transactions.Tx.AuthInfo
@@ -85,7 +86,7 @@ export interface TxGenerated {
     authInfo: Proto.Cosmos.Transactions.Tx.AuthInfo
     signBytes: string
   }
-  eipToSign: EIP712ToSign
+  eipToSign: EIP712ToSign | undefined
 }
 
 export type Coin = {
@@ -96,19 +97,4 @@ export type Coin = {
 export type Period = {
   length: number
   amount: Coin[]
-}
-
-import { Any } from '@althea-net/althea-proto/src/codegen/google/protobuf/any'
-import { Message, AnyMessage } from '@bufbuild/protobuf'
-
-export interface MessageGenerated<T extends Message<T> = AnyMessage> {
-  message: Message<T>
-  path: string
-}
-
-export function createAnyMessage(msg: MessageGenerated) {
-  return Any.fromJSON({
-    typeUrl: `/${msg.path}`,
-    value: msg.message.toBinary(),
-  })
 }

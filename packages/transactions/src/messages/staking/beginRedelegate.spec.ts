@@ -1,4 +1,4 @@
-import { MsgBeginRedelegate } from '@althea-net/althea-proto/src/codegen/cosmos/staking/v1beta1/tx'
+import { createMsgBeginRedelegate as protoMsgBeginRedelegate } from '@althea-net/proto'
 import {
   generateTypes,
   createMsgBeginRedelegate,
@@ -38,12 +38,13 @@ describe('test tx payload', () => {
       message,
     }
 
-    const messageCosmos = MsgBeginRedelegate.fromJSON({
-      delegatorAddress: context.sender.accountAddress,
-      validatorSrcAddress: params.validatorSrcAddress,
-      validatorDstAddress: params.validatorDstAddress,
-      amount: {amount: params.amount, denom: params.denom},
-    })
+    const messageCosmos = protoMsgBeginRedelegate(
+      context.sender.accountAddress,
+      params.validatorSrcAddress,
+      params.validatorDstAddress,
+      params.amount,
+      params.denom,
+    )
 
     const payload = createTxMsgBeginRedelegate(context, params)
     const expectedPayload = createTransactionPayload(
