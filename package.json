@@ -16,6 +16,7 @@
     ]
   },
   "scripts": {
+    "compileproto": "bash scripts/create-proto-files.sh",
     "build": "lerna run --parallel build",
     "lerna:publish": "lerna publish from-package --concurrency=1",
     "build:watch": "lerna run --parallel build:watch",
@@ -48,6 +49,8 @@
     ]
   },
   "devDependencies": {
+    "@bufbuild/buf": "^1.25.0",
+    "@bufbuild/protoc-gen-es": "^1.3.0",
     "@commitlint/cli": "^16.2.0",
     "@commitlint/config-conventional": "^16.2.1",
     "@types/jest": "^27.0.1",
@@ -72,10 +75,14 @@
     "lint-staged": "^11.1.2",
     "markdownlint-cli": "^0.31.1",
     "prettier": "^2.4.1",
+    "protoc": "^1.1.3",
     "shx": "^0.3.4",
     "ts-jest": "^29.0.5",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.11.0",
     "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^1.3.0"
   }
 }
