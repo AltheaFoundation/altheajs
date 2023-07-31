@@ -1,4 +1,6 @@
 export * as Cosmos from './cosmos/index.js'
 export * as IBC from './cosmos-ibc/index.js'
 export * as Ethermint from './ethermint/index.js'
-export * as Evmos from './evmos/index.js'
+export * as Canto from './canto/index.js'
+export * as Lockup from './lockup/index.js'
+export * as Microtx from './microtx/index.js'

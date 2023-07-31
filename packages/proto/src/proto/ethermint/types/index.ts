@@ -1,3 +1,3 @@
-export * as Web3 from './web3.js'
-export * as Account from './account.js'
-export * as DynamicFee from './dynamicFee.js'
+export * as Web3 from './v1/web3_pb.js'
+export * as Account from './v1/account_pb.js'
+export * as Indexer from './v1/indexer_pb.js'

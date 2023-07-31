@@ -18,7 +18,6 @@ import { SignMode } from '../proto/cosmos/transactions/signing.js'
 import { AminoTypes } from '../amino/registry.js'
 import { convertProtoMessageToObject } from '../amino/objectConverter.js'
 
-import { createAnyMessage, MessageGenerated } from '../messages/common.js'
 
 export const SIGN_DIRECT = SignMode.DIRECT
 export const LEGACY_AMINO = SignMode.LEGACY_AMINO_JSON
