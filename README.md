@@ -6,10 +6,6 @@ JS and TS libs for interacting with Althea-L1 via Ethereum wallets like MetaMask
 
 This repo is a fork of evmos/evmosjs, and all of the shared history is preserved. Please see the contributors page or the commit history to see the original creators and their contributions to that upstream repo.
 
-## WIP Migration
-
-altheajs is in the process of migrating from the old evmos buf.build compiled protos to the telescope-based althea-net/althea-proto-js definitions. The following instructions are likely inaccurate.
-
 ## Installation
 
 altheajs uses [buf.build](https://buf.build/) to manage [althea Protobuf dependencies](https://buf.build/althea). To install altheajs packages in your project,
@@ -264,7 +260,7 @@ const signedTx = createTxRaw(
 AltheaJS supports Cosmos SDK `SignDirect` payloads that can be signed using Keplr.
 
 ```ts
-import { createTxRaw } from '@althea-net/altheajs/proto'
+import { createTxRaw } from '@althea-net/proto'
 
 // First, populate a TxContext object and create a signable Tx payload.
 // (See 'Create a Signable Transaction' to learn how to create these).
@@ -308,7 +304,7 @@ AltheaJS also supports signing [EIP-712](https://eips.ethereum.org/EIPS/eip-712)
 
 ```ts
 import { EthSignType } from '@keplr-wallet/types';
-import { createTxRaw } from '@althea-net/altheajs/proto'
+import { createTxRaw } from '@althea-net/proto'
 
 // First, populate a TxContext object and create a signable Tx payload.
 // (See 'Create a Signable Transaction' to learn how to create these).
@@ -348,7 +344,7 @@ Regardless of how the transaction is signed, broadcasting takes place the same w
 import {
   generateEndpointBroadcast,
   generatePostBodyBroadcast,
-} from '@althea-net/altheajs/provider'
+} from '@althea-net/provider'
 
 // First, sign a transaction using MetaMask or Keplr.
 const signedTx = createTxRaw(...)
