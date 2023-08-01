@@ -4,7 +4,7 @@ EIP712 transactions creator.
 
 # Installation
 
-- `yarn add @althea-net/altheajs`
+- `yarn add @althea-net/eip712`
 
 # Example
 
@@ -18,7 +18,7 @@ import {
   generateTypes,
   createMsgSend,
   MSG_SEND_TYPES,
-} from '@althea-net/altheajs/packages/eip712'
+} from '@althea-net/eip712'
 
 let fee = generateFee(
   '20',
