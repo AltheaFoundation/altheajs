@@ -65,6 +65,40 @@ export const altheaToEth = (altheaAddress: string) => {
   return ETH.encoder(data)
 }
 
+export const GRAVITY = bech32Chain('GRAVITY', 'gravity')
+
+export const ethToGravity = (ethAddress: string) => {
+  const data = ETH.decoder(ethAddress)
+  return GRAVITY.encoder(data)
+}
+
+export const gravityToEth = (gravityAddress: string) => {
+  const data = GRAVITY.decoder(gravityAddress)
+  return ETH.encoder(data)
+}
+
+export const gravityToAlthea = (gravityAddress: string) => {
+  const data = GRAVITY.decoder(gravityAddress)
+  return ALTHEA.encoder(data)
+}
+
+export const altheaToGravity = (altheaAddress: string) => {
+  const data = ALTHEA.decoder(altheaAddress)
+  return GRAVITY.encoder(data)
+}
+
+export const CANTO = bech32Chain('CANTO', 'canto')
+
+export const ethToCanto = (ethAddress: string) => {
+  const data = ETH.decoder(ethAddress)
+  return CANTO.encoder(data)
+}
+
+export const cantoToEth = (cantoAddress: string) => {
+  const data = CANTO.decoder(cantoAddress)
+  return ETH.encoder(data)
+}
+
 export const ETHERMINT = bech32Chain('ETHERMINT', 'ethm')
 
 export const ethToEthermint = (ethAddress: string) => {
