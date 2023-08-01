@@ -1,4 +1,4 @@
-export * from './messages/index.js'
-export * from './transaction/index.js'
-export * from './encoding/index.js'
-export * as Proto from './proto/index.js'
+export * from './messages/index'
+export * from './transaction/index'
+export * from './encoding/index'
+export * as Proto from './proto/index'

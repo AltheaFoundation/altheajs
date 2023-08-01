@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import { Metadata } from "../../../cosmos/bank/v1beta1/bank_pb.js";
+import { Metadata } from "../../../cosmos/bank/bank";
 
 /**
  * Owner enumerates the ownership of a ERC20 contract.
@@ -281,4 +281,3 @@ export class ToggleTokenConversionProposal extends Message<ToggleTokenConversion
     return proto3.util.equals(ToggleTokenConversionProposal, a, b);
   }
 }
-

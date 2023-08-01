@@ -1,2 +1,2 @@
-export * from './genericGrant.js'
-export * from './genericRevoke.js'
+export * from './genericGrant'
+export * from './genericRevoke'

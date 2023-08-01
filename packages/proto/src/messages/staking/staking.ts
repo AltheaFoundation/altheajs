@@ -1,10 +1,10 @@
-import { Coin } from '../../proto/cosmos/base/coin.js'
+import { Coin } from '../../proto/cosmos/base/coin'
 import {
   MsgDelegate,
   MsgBeginRedelegate,
   MsgUndelegate,
   MsgCancelUnbondingDelegation,
-} from '../../proto/cosmos/staking/tx.js'
+} from '../../proto/cosmos/staking/tx'
 
 export function createMsgDelegate(
   delegatorAddress: string,

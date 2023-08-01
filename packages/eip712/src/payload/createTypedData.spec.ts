@@ -1,7 +1,7 @@
 import createTypedData, { PRIMARY_TYPE } from './createTypedData'
-import createDomain from './createDomain.js'
-import createTypes from './createTypes/index.js'
-import flattenPayload from './flattenPayload.js'
+import createDomain from './createDomain'
+import createTypes from './createTypes/index'
+import flattenPayload from './flattenPayload'
 
 import TestUtils from '../tests/utils'
 

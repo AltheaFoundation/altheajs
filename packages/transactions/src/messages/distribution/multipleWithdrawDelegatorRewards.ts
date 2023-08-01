@@ -5,7 +5,7 @@ import {
   MSG_WITHDRAW_DELEGATOR_REWARD_TYPES,
   createMsgWithdrawDelegatorReward,
 } from '@althea-net/eip712'
-import { createTransactionPayload, TxContext } from '../base.js'
+import { createTransactionPayload, TxContext } from '../base'
 
 export interface MultipleMsgWithdrawDelegatorRewardParams {
   validatorAddresses: string[]

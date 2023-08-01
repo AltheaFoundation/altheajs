@@ -10,7 +10,7 @@ import {
   createStdFee,
   createStdSignDocFromProto,
 } from '@althea-net/proto'
-import { Chain, Fee, Sender, TxPayload } from './common.js'
+import { Chain, Fee, Sender, TxPayload } from './common'
 
 /**
  * TxContext is the transaction context for a SignDoc that is independent

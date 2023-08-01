@@ -4,7 +4,7 @@ import {
   createMsgDeposit,
   MSG_DEPOSIT_TYPES,
 } from '@althea-net/eip712'
-import { createTransactionPayload, TxContext } from '../base.js'
+import { createTransactionPayload, TxContext } from '../base'
 
 export interface MsgDepositParams {
   proposalId: number

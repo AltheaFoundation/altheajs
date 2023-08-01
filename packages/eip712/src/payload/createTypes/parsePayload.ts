@@ -1,7 +1,7 @@
-import { FlattenPayloadResponse, JSONObject } from '../types.js'
-import { payloadMsgFieldForIndex } from '../flattenPayload.js'
-import { EIP712Type, newType } from '../eip712Types.js'
-import addMsgTypes from './parseMessage.js'
+import { FlattenPayloadResponse, JSONObject } from '../types'
+import { payloadMsgFieldForIndex } from '../flattenPayload'
+import { EIP712Type, newType } from '../eip712Types'
+import addMsgTypes from './parseMessage'
 
 export const createBaseTypes = () => ({
   EIP712Domain: [

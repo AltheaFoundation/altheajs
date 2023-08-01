@@ -1,2 +1,2 @@
-export * as Authz from './authz.js'
-export * as Tx from './tx.js'
+export * as Authz from './authz'
+export * as Tx from './tx'

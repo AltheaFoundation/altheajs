@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import { Params } from "./govshuttle_pb.js";
+import { Params } from "./govshuttle_pb";
 
 /**
  * QueryParamsRequest is request type for the Query/Params RPC method.
@@ -80,4 +80,3 @@ export class QueryParamsResponse extends Message<QueryParamsResponse> {
     return proto3.util.equals(QueryParamsResponse, a, b);
   }
 }
-

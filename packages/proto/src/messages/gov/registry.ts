@@ -3,7 +3,7 @@ import {
   MsgSubmitProposal,
   MsgVote,
   MsgVoteWeighted,
-} from '../../proto/cosmos/gov/tx.js'
+} from '../../proto/cosmos/gov/tx'
 
 export const govRegistryTypes = [
   MsgDeposit,

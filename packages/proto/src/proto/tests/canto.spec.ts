@@ -1,7 +1,7 @@
 import {
   genTestEthSecp256k1PubKey,
   genTestMsgConvertCoin,
-} from './evmos-utils'
+} from './canto-utils'
 import { testMessageEncodeDecode } from './utils'
 
 // Test Encode/Decode serialization against Cosmos SDK encodings in Go.

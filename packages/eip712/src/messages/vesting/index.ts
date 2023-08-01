@@ -1,1 +1,1 @@
-export * from './createVestingAccount.js'
+export * from './createVestingAccount'

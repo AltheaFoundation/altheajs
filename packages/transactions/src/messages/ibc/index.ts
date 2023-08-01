@@ -1,1 +1,1 @@
-export * from './transfer.js'
+export * from './transfer'

@@ -12,7 +12,7 @@ import {
   microtxRegistryTypes,
   stakingRegistryTypes,
   transactionsRegistryTypes,
-} from '../messages/index.js'
+} from '../messages/index'
 
 const parseType = (registryTypes: MessageType[], typeName: string) => {
   for (const type of registryTypes) {

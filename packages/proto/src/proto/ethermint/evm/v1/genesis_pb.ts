@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import { Params, State } from "./evm_pb.js";
+import { Params, State } from "./evm_pb";
 
 /**
  * GenesisState defines the evm module's genesis state.
@@ -114,4 +114,3 @@ export class GenesisAccount extends Message<GenesisAccount> {
     return proto3.util.equals(GenesisAccount, a, b);
   }
 }
-

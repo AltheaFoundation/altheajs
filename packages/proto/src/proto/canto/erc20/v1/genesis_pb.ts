@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import { TokenPair } from "./erc20_pb.js";
+import { TokenPair } from "./erc20_pb";
 
 /**
  * GenesisState defines the module's genesis state.
@@ -106,4 +106,3 @@ export class Params extends Message<Params> {
     return proto3.util.equals(Params, a, b);
   }
 }
-

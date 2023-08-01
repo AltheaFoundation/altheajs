@@ -3,10 +3,10 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { Params } from "./genesis_pb.js";
-import { LiquidInfrastructureAccount } from "./msgs_pb.js";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from '@bufbuild/protobuf';
+import { Message, proto3, protoInt64 } from '@bufbuild/protobuf';
+import { Params } from './genesis_pb';
+import { LiquidInfrastructureAccount } from './msgs_pb';
 
 /**
  * Query the current microtx params
@@ -314,4 +314,3 @@ export class QueryLiquidAccountResponse extends Message<QueryLiquidAccountRespon
     return proto3.util.equals(QueryLiquidAccountResponse, a, b);
   }
 }
-

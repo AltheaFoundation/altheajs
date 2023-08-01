@@ -1,5 +1,5 @@
-import { PubKey } from '../src/proto/ethermint/crypto/keys.js'
-import { createAnyMessage } from '../src/messages/common.js'
+import { PubKey } from "../src/proto/ethermint/crypto/v1/ethsecp256k1/keys_pb"
+import { createAnyMessage } from '../src/messages/common'
 
 const key = new Uint8Array([
   10, 33, 2, 136, 177, 245, 49, 184, 120, 113, 219, 192, 55, 41, 81, 135, 37,

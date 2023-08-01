@@ -1,2 +1,2 @@
-export * from './keys.js'
-export * from './registry.js'
+export * from './keys'
+export * from './registry'

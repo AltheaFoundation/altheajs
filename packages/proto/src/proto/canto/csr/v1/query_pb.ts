@@ -5,9 +5,9 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { Params } from "./params_pb.js";
-import { PageRequest, PageResponse } from "../../../cosmos/base/query/v1beta1/pagination_pb.js";
-import { CSR } from "./csr_pb.js";
+import { Params } from "./params_pb";
+import { PageRequest, PageResponse } from "../../../cosmos/base/query/v1beta1/pagination";
+import { CSR } from "./csr_pb";
 
 /**
  * QueryParamsRequest is the request type for the Query/Params RPC method.
@@ -402,4 +402,3 @@ export class QueryTurnstileResponse extends Message<QueryTurnstileResponse> {
     return proto3.util.equals(QueryTurnstileResponse, a, b);
   }
 }
-

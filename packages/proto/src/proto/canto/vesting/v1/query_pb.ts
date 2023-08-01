@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import { Coin } from "../../../cosmos/base/v1beta1/coin_pb.js";
+import { Coin } from "../../../cosmos/base/coin";
 
 /**
  * QueryBalancesRequest is the request type for the Query/Balances RPC method.
@@ -105,4 +105,3 @@ export class QueryBalancesResponse extends Message<QueryBalancesResponse> {
     return proto3.util.equals(QueryBalancesResponse, a, b);
   }
 }
-

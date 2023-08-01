@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import { Coin } from "../../cosmos/base/v1beta1/coin_pb.js";
+import { Coin } from "../../cosmos/base/coin";
 
 /**
  * MsgMicrotx A Msg used to send funds from one Althea network wallet to another,
@@ -382,4 +382,3 @@ export class EventAccountLiquified extends Message<EventAccountLiquified> {
     return proto3.util.equals(EventAccountLiquified, a, b);
   }
 }
-

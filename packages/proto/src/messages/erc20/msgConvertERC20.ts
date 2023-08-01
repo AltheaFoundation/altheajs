@@ -1,4 +1,4 @@
-import { MsgConvertERC20 } from '../../proto/canto/erc20/v1/tx_pb.js'
+import { MsgConvertERC20 } from '../../proto/canto/erc20/v1/tx_pb'
 
 export function createMsgConvertERC20(
   contractAddress: string,

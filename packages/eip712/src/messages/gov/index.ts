@@ -1,3 +1,3 @@
-export * from './deposit.js'
-export * from './submitProposal.js'
-export * from './vote.js'
+export * from './deposit'
+export * from './submitProposal'
+export * from './vote'

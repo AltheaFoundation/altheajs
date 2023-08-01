@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { Params } from "./feemarket_pb.js";
+import { Params } from "./feemarket_pb";
 
 /**
  * QueryParamsRequest defines the request type for querying x/evm parameters.
@@ -226,4 +226,3 @@ export class QueryBlockGasResponse extends Message<QueryBlockGasResponse> {
     return proto3.util.equals(QueryBlockGasResponse, a, b);
   }
 }
-

@@ -1,3 +1,3 @@
-export * from './msgEthereumTx.js'
-export * from './web3Extension.js'
-export * from './registry.js'
+export * from './msgEthereumTx'
+export * from './web3Extension'
+export * from './registry'

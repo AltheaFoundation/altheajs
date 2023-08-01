@@ -5,9 +5,9 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
-import { PageRequest, PageResponse } from "../../../cosmos/base/query/v1beta1/pagination_pb.js";
-import { Log, Params, TraceConfig } from "./evm_pb.js";
-import { MsgEthereumTx } from "./tx_pb.js";
+import { PageRequest, PageResponse } from "../../../cosmos/base/query/v1beta1/pagination";
+import { Log, Params, TraceConfig } from "./evm_pb";
+import { MsgEthereumTx } from "./tx_pb";
 
 /**
  * QueryAccountRequest is the request type for the Query/Account RPC method.
@@ -1132,4 +1132,3 @@ export class QueryBaseFeeResponse extends Message<QueryBaseFeeResponse> {
     return proto3.util.equals(QueryBaseFeeResponse, a, b);
   }
 }
-

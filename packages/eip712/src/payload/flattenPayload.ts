@@ -1,4 +1,4 @@
-import { JSONObject, FlattenPayloadResponse } from './types.js'
+import { JSONObject, FlattenPayloadResponse } from './types'
 
 export const payloadMsgFieldForIndex = (i: number) => `msg${i}`
 

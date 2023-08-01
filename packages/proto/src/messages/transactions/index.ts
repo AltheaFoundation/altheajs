@@ -1,2 +1,2 @@
-export * from './txRaw.js'
-export * from './registry.js'
+export * from './txRaw'
+export * from './registry'

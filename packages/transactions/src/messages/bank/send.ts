@@ -1,5 +1,5 @@
 import { createMsgSend as protoCreateMsgSend } from '@althea-net/proto'
-import { newCreateTransactionPayload, TxContext } from '../base.js'
+import { newCreateTransactionPayload, TxContext } from '../base'
 
 export interface MsgSendParams {
   destinationAddress: string

@@ -1,5 +1,5 @@
-import { JSONObject } from '../types.js'
-import { EIP712Type, newType, typesAreEqual } from '../eip712Types.js'
+import { JSONObject } from '../types'
+import { EIP712Type, newType, typesAreEqual } from '../eip712Types'
 
 const TYPE_PREFIX = 'Type'
 const ROOT_PREFIX = '_'

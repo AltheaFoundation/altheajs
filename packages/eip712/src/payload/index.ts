@@ -1,1 +1,1 @@
-export { default as createTypedData } from './createTypedData.js'
+export { default as createTypedData } from './createTypedData'

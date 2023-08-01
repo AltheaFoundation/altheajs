@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import { BaseAccount } from "../../../cosmos/auth/v1beta1/auth_pb.js";
+import { BaseAccount } from "../../../cosmos/auth/auth";
 
 /**
  * EthAccount implements the authtypes.AccountI interface and embeds an
@@ -52,4 +52,3 @@ export class EthAccount extends Message<EthAccount> {
     return proto3.util.equals(EthAccount, a, b);
   }
 }
-

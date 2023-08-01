@@ -1,7 +1,7 @@
-import { BaseAccount } from '../src/proto/cosmos/auth/auth.js'
-import { EthAccount } from '../src/proto/ethermint/types/account.js'
-import { createAnyMessage } from '../src/messages/common.js'
-import { pubkeyAsAny as pubKey } from './pubkey.js'
+import { BaseAccount } from '../src/proto/cosmos/auth/auth'
+import { EthAccount } from '../src/proto/ethermint/types/v1/account_pb'
+import { createAnyMessage } from '../src/messages/common'
+import { pubkeyAsAny as pubKey } from './pubkey'
 
 const address = 'evmos1pmk2r32ssqwps42y3c9d4clqlca403yd9wymgr'
 const accountNumber = BigInt(40)

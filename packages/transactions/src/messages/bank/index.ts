@@ -1,1 +1,1 @@
-export * from './send.js'
+export * from './send'

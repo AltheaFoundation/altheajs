@@ -1,1 +1,1 @@
-export * as IBC from './ibc/index.js'
+export * as IBC from './ibc/index'

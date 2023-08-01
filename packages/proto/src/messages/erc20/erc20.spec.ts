@@ -50,7 +50,7 @@ describe('test ERC20 Module message generation', () => {
     expect(msg.message.toJson(JSONOptions)).toStrictEqual({
       title,
       description: title,
-      erc20addresses: [hex],
+      erc20address: hex,
     })
     expect(msg.path).toStrictEqual(RegisterERC20Proposal.typeName)
   })
@@ -78,7 +78,7 @@ describe('test ERC20 Module message generation', () => {
       uri,
       uriHash,
     })
-    const msg = createMsgRegisterCoin(title, description, [metadata])
+    const msg = createMsgRegisterCoin(title, description, metadata)
 
     // expected output uses snake_case naming instead of camelCase
     const expMeta = {
@@ -95,7 +95,7 @@ describe('test ERC20 Module message generation', () => {
     expect(msg.message.toJson(JSONOptions)).toStrictEqual({
       title,
       description: title,
-      metadata: [expMeta],
+      metadata: expMeta,
     })
     expect(msg.path).toStrictEqual(RegisterCoinProposal.typeName)
   })

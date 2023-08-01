@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Any, Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { AccessTuple, Log } from "./evm_pb.js";
+import { AccessTuple, Log } from "./evm_pb";
 
 /**
  * MsgEthereumTx encapsulates an Ethereum transaction as an SDK message.
@@ -79,7 +79,7 @@ export class MsgEthereumTx extends Message<MsgEthereumTx> {
 /**
  * LegacyTx is the transaction data of regular Ethereum transactions.
  * NOTE: All non-protected transactions (i.e non EIP155 signed) will fail if the
- * AllowUnprotectedTxs parameter is disabled. 
+ * AllowUnprotectedTxs parameter is disabled.
  *
  * @generated from message ethermint.evm.v1.LegacyTx
  */
@@ -536,4 +536,3 @@ export class MsgEthereumTxResponse extends Message<MsgEthereumTxResponse> {
     return proto3.util.equals(MsgEthereumTxResponse, a, b);
   }
 }
-

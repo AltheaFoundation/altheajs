@@ -1,1 +1,1 @@
-export * from './decoder.js'
+export * from './decoder'

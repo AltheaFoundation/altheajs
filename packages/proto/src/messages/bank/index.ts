@@ -1,2 +1,2 @@
-export * from './msgSend.js'
-export * from './registry.js'
+export * from './msgSend'
+export * from './registry'

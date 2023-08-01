@@ -10,14 +10,12 @@ describe('test Microtx Module message generation', () => {
     const msg = createMsgMicrotx(from, to, amount, denom)
 
     expect(msg.message.toJson(JSONOptions)).toStrictEqual({
-      from_address: from,
-      to_address: to,
-      amount: [
-        {
-          amount,
-          denom,
-        },
-      ],
+      sender: from,
+      receiver: to,
+      amount: {
+        amount,
+        denom,
+      },
     })
     expect(msg.path).toStrictEqual(MsgMicrotx.typeName)
   })

@@ -5,7 +5,7 @@ import {
   createIBCMsgTransfer,
   CREATE_IBC_MSG_TRANSFER_TYPES,
 } from '@althea-net/eip712'
-import { createTransactionPayload, TxContext } from '../base.js'
+import { createTransactionPayload, TxContext } from '../base'
 
 export interface IBCMsgTransferParams {
   // Connection

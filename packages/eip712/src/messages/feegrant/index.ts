@@ -1,2 +1,2 @@
-export * from './grantAllowance.js'
-export * from './revokeAllowance.js'
+export * from './grantAllowance'
+export * from './revokeAllowance'

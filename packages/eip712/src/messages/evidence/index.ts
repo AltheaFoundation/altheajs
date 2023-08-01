@@ -1,1 +1,1 @@
-export * from './submitEvidence.js'
+export * from './submitEvidence'

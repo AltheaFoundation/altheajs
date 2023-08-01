@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import { Coin } from "../../../cosmos/base/v1beta1/coin_pb.js";
+import { Coin, DecCoin } from "../../../cosmos/base/coin";
 
 /**
  * MsgConvertCoin defines a Msg to convert a native Cosmos coin to a ERC20 token
@@ -196,4 +196,3 @@ export class MsgConvertERC20Response extends Message<MsgConvertERC20Response> {
     return proto3.util.equals(MsgConvertERC20Response, a, b);
   }
 }
-

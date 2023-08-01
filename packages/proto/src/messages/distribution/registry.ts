@@ -3,7 +3,7 @@ import {
   MsgWithdrawValidatorCommission,
   MsgSetWithdrawAddress,
   MsgFundCommunityPool,
-} from '../../proto/cosmos/distribution/tx.js'
+} from '../../proto/cosmos/distribution/tx'
 
 export const distributionRegistryTypes = [
   MsgWithdrawDelegatorReward,

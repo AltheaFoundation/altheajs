@@ -5,8 +5,8 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { DecCoin } from "../../../cosmos/base/v1beta1/coin_pb.js";
-import { Params } from "./genesis_pb.js";
+import { DecCoin } from "../../../cosmos/base/coin";
+import { Params } from "./genesis_pb";
 
 /**
  * QueryPeriodRequest is the request type for the Query/Period RPC method.
@@ -459,4 +459,3 @@ export class QueryParamsResponse extends Message<QueryParamsResponse> {
     return proto3.util.equals(QueryParamsResponse, a, b);
   }
 }
-

@@ -1,2 +1,2 @@
-export * from './ibcMsgTransfer.js'
-export * from './registry.js'
+export * from './ibcMsgTransfer'
+export * from './registry'

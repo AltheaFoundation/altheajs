@@ -6,7 +6,7 @@ import {
   createMsgBeginRedelegate,
 } from '@althea-net/eip712'
 
-import { createTransactionPayload, TxContext } from '../base.js'
+import { createTransactionPayload, TxContext } from '../base'
 
 export interface MsgBeginRedelegateParams {
   validatorSrcAddress: string

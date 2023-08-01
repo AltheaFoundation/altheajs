@@ -5,7 +5,7 @@ import {
   createMsgConvertCoin,
   MSG_CONVERT_COIN_TYPES,
 } from '@althea-net/eip712'
-import { createTransactionPayload, TxContext } from '../base.js'
+import { createTransactionPayload, TxContext } from '../base'
 
 export interface MsgConvertCoinParams {
   denom: string

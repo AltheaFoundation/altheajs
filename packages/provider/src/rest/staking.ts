@@ -1,4 +1,4 @@
-import { Coin } from './coin.js'
+import { Coin } from './coin'
 
 export function generateEndpointDistributionRewardsByAddress(address: string) {
   return `/cosmos/distribution/v1beta1/delegators/${address}/rewards`

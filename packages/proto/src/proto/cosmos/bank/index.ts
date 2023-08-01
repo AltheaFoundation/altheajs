@@ -1,2 +1,2 @@
-export * as Tx from './tx.js'
-export * as Bank from './bank.js'
+export * as Tx from './tx'
+export * as Bank from './bank'

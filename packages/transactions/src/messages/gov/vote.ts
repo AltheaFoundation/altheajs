@@ -1,7 +1,7 @@
 import { createMsgVote as protoMsgVote } from '@althea-net/proto'
 
 import { generateTypes, createMsgVote, MSG_VOTE_TYPES } from '@althea-net/eip712'
-import { createTransactionPayload, TxContext } from '../base.js'
+import { createTransactionPayload, TxContext } from '../base'
 
 export interface MsgVoteParams {
   proposalId: number

@@ -5,7 +5,7 @@ import {
   createMsgConvertERC20,
   MSG_CONVERT_ERC20_TYPES,
 } from '@althea-net/eip712'
-import { createTransactionPayload, TxContext } from '../base.js'
+import { createTransactionPayload, TxContext } from '../base'
 
 export interface MsgConvertERC20Params {
   contractAddress: string

@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { ExponentialCalculation, InflationDistribution } from "./inflation_pb.js";
+import { ExponentialCalculation, InflationDistribution } from "./inflation_pb";
 
 /**
  * GenesisState defines the inflation module's genesis state.
@@ -144,4 +144,3 @@ export class Params extends Message<Params> {
     return proto3.util.equals(Params, a, b);
   }
 }
-

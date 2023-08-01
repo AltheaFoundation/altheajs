@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
-import { BaseVestingAccount, Period } from "../../../cosmos/vesting/v1beta1/vesting_pb.js";
+import { BaseVestingAccount, Period } from "../../../cosmos/vesting/vesting";
 
 /**
  * ClawbackVestingAccount implements the VestingAccount interface. It provides
@@ -83,4 +83,3 @@ export class ClawbackVestingAccount extends Message<ClawbackVestingAccount> {
     return proto3.util.equals(ClawbackVestingAccount, a, b);
   }
 }
-

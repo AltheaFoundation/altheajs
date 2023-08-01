@@ -5,9 +5,9 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import { PageRequest, PageResponse } from "../../../cosmos/base/query/v1beta1/pagination_pb.js";
-import { TokenPair } from "./erc20_pb.js";
-import { Params } from "./genesis_pb.js";
+import { PageRequest, PageResponse } from "../../../cosmos/base/query/v1beta1/pagination";
+import { TokenPair } from "./erc20_pb";
+import { Params } from "./genesis_pb";
 
 /**
  * QueryTokenPairsRequest is the request type for the Query/TokenPairs RPC
@@ -253,4 +253,3 @@ export class QueryParamsResponse extends Message<QueryParamsResponse> {
     return proto3.util.equals(QueryParamsResponse, a, b);
   }
 }
-

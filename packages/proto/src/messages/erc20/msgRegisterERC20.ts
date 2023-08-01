@@ -1,4 +1,4 @@
-import { RegisterERC20Proposal } from '../../proto/canto/erc20/v1/erc20_pb.js'
+import { RegisterERC20Proposal } from '../../proto/canto/erc20/v1/erc20_pb'
 
 export function createMsgRegisterERC20(
   title: string,

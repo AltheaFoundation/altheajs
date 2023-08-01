@@ -1,6 +1,6 @@
 import { createMsgRevoke, RevokeMessages } from '@althea-net/proto'
 
-import { createTransactionPayload, TxContext } from '../base.js'
+import { createTransactionPayload, TxContext } from '../base'
 
 export interface MsgStakeRevokeAuthorizationParams {
   granteeAddress: string

@@ -1,5 +1,5 @@
-import { Coin } from '../../proto/cosmos/base/coin.js'
-import { MsgMicrotx } from '../../proto/microtx/v1/msgs_pb.js'
+import { Coin } from '../../proto/cosmos/base/coin'
+import { MsgMicrotx } from '../../proto/microtx/v1/msgs_pb'
 
 export function createMsgMicrotx(
   sender: string,
@@ -7,10 +7,10 @@ export function createMsgMicrotx(
   amount: string,
   denom: string,
 ) {
-  const amounts = [new Coin({
+  const amounts = new Coin({
     denom,
     amount,
-  })]
+  })
 
   const message = new MsgMicrotx({
     sender,

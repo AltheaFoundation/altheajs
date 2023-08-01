@@ -1,4 +1,4 @@
-import { ExtensionOptionsWeb3Tx } from '../../proto/ethermint/types/v1/web3_pb.js'
+import { ExtensionOptionsWeb3Tx } from "../../proto/ethermint/types/v1/web3_pb"
 
 export function createWeb3Extension(
   chainId: number,

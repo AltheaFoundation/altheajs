@@ -1,2 +1,2 @@
-export * from './distribution.js'
-export * from './registry.js'
+export * from './distribution'
+export * from './registry'

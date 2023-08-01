@@ -5,7 +5,7 @@ import {
   MSG_SET_WITHDRAW_ADDRESS_TYPES,
   createMsgSetWithdrawAddress,
 } from '@althea-net/eip712'
-import { createTransactionPayload, TxContext } from '../base.js'
+import { createTransactionPayload, TxContext } from '../base'
 
 export interface MsgSetWithdrawAddressParams {
   delegatorAddress: string

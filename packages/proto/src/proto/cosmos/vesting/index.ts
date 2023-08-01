@@ -1,1 +1,1 @@
-export * as Vesting from './vesting.js'
+export * as Vesting from './vesting'

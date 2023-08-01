@@ -1,10 +1,10 @@
-import { Coin } from '../../proto/cosmos/base/coin.js'
+import { Coin } from '../../proto/cosmos/base/coin'
 import {
   AuthorizationType,
   StakeAuthorization,
   // eslint-disable-next-line
   StakeAuthorization_Validators,
-} from '../../proto/cosmos/staking/authz.js'
+} from '../../proto/cosmos/staking/authz'
 
 export function createStakeAuthorization(
   allowAddresses: string | string[],

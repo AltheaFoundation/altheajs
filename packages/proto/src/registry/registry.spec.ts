@@ -9,10 +9,9 @@ import {
   evmRegistryTypes,
   govRegistryTypes,
   ibcRegistryTypes,
-  revenueRegistryTypes,
+  microtxRegistryTypes,
   stakingRegistryTypes,
   transactionsRegistryTypes,
-  vestingRegistryTypes,
   createAnyMessage,
   createMsgSend,
   createMsgConvertCoin,
@@ -33,10 +32,9 @@ describe('test registry types and encoding', () => {
       ...evmRegistryTypes,
       ...govRegistryTypes,
       ...ibcRegistryTypes,
-      ...revenueRegistryTypes,
+      ...microtxRegistryTypes,
       ...stakingRegistryTypes,
       ...transactionsRegistryTypes,
-      ...vestingRegistryTypes,
     ])
   })
 

@@ -7,7 +7,7 @@ import {
   createMsgSubmitProposal,
   MSG_SUBMIT_PROPOSAL_TYPES,
 } from '@althea-net/eip712'
-import { createTransactionPayload, TxContext } from '../base.js'
+import { createTransactionPayload, TxContext } from '../base'
 
 export interface MsgSubmitProposalParams {
   content: any // TODO: Use Protobuf Generic Type

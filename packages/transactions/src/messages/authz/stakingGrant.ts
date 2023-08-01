@@ -1,5 +1,5 @@
 import { createMsgGrant, createStakeAuthorization, Proto } from '@althea-net/proto'
-import { createTransactionPayload, TxContext } from '../base.js'
+import { createTransactionPayload, TxContext } from '../base'
 
 export interface MsgStakeAuthorizationParams {
   granteeAddress: string

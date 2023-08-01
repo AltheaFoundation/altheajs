@@ -1,1 +1,1 @@
-export * as Keys from './keys.js'
+export * as Keys from './keys'

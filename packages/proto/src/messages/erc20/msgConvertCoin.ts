@@ -1,5 +1,5 @@
-import { Coin } from '../../proto/cosmos/base/coin.js'
-import { MsgConvertCoin } from '../../proto/canto/erc20/v1/tx_pb.js'
+import { Coin } from '../../proto/cosmos/base/coin'
+import { MsgConvertCoin } from '../../proto/canto/erc20/v1/tx_pb'
 
 export function createMsgConvertCoin(
   denom: string,

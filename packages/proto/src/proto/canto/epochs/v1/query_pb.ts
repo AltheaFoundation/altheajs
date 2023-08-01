@@ -5,8 +5,8 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { PageRequest, PageResponse } from "../../../cosmos/base/query/v1beta1/pagination_pb.js";
-import { EpochInfo } from "./genesis_pb.js";
+import { PageRequest, PageResponse } from "../../../cosmos/base/query/v1beta1/pagination";
+import { EpochInfo } from "./genesis_pb";
 
 /**
  * @generated from message canto.epochs.v1.QueryEpochsInfoRequest
@@ -161,4 +161,3 @@ export class QueryCurrentEpochResponse extends Message<QueryCurrentEpochResponse
     return proto3.util.equals(QueryCurrentEpochResponse, a, b);
   }
 }
-

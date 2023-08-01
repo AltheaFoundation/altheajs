@@ -5,7 +5,7 @@ import {
 import {
   createMicrotxAminoConverters,
   createERC20AminoConverters,
-} from '../messages/index.js'
+} from '../messages/index'
 
 // TODO: Add missing Amino types (see x/**/codec.go)
 

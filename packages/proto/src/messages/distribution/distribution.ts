@@ -2,7 +2,7 @@ import {
   MsgWithdrawDelegatorReward,
   MsgWithdrawValidatorCommission,
   MsgSetWithdrawAddress,
-} from '../../proto/cosmos/distribution/tx.js'
+} from '../../proto/cosmos/distribution/tx'
 
 export interface MsgWithdrawDelegatorRewardProtoInterface {
   path: string
