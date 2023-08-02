@@ -1,4 +1,5 @@
 export * from './messages/index'
+export * from './registry/index'
 export * from './transaction/index'
 export * from './encoding/index'
 export * as Proto from './proto/index'
