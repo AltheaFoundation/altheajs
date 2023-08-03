@@ -16,7 +16,7 @@ export interface MsgSubmitProposalParams {
   proposer: string
 }
 
-const createEIP712MsgSubmitProposal = (params: MsgSubmitProposalParams) => {
+export const createEIP712MsgSubmitProposal = (params: MsgSubmitProposalParams) => {
   const types = generateTypes(MSG_SUBMIT_PROPOSAL_TYPES)
 
   const contentAsJSON = params.content.message.toJSON({
@@ -36,7 +36,7 @@ const createEIP712MsgSubmitProposal = (params: MsgSubmitProposalParams) => {
   }
 }
 
-const createCosmosMsgSubmitProposal = (params: MsgSubmitProposalParams) => {
+export const createCosmosMsgSubmitProposal = (params: MsgSubmitProposalParams) => {
   const contentAsAny = createAnyMessage(params.content)
 
   return protoMsgSubmitProposal(

@@ -14,7 +14,7 @@ export interface MsgConvertERC20Params {
   senderHex: string
 }
 
-const createEIP712MsgConvertERC20 = (params: MsgConvertERC20Params) => {
+export const createEIP712MsgConvertERC20 = (params: MsgConvertERC20Params) => {
   const types = generateTypes(MSG_CONVERT_ERC20_TYPES)
 
   const message = createMsgConvertERC20(
@@ -30,7 +30,7 @@ const createEIP712MsgConvertERC20 = (params: MsgConvertERC20Params) => {
   }
 }
 
-const createCosmosMsgConvertERC20 = (params: MsgConvertERC20Params) => {
+export const createCosmosMsgConvertERC20 = (params: MsgConvertERC20Params) => {
   return protoMsgConvertERC20(
     params.contractAddress,
     params.amount,

@@ -2,7 +2,7 @@ import { createMsgSend as protoCreateMsgSend } from '@althea-net/proto'
 import { createTransactionPayload, newCreateTransactionPayload, TxContext } from '../base'
 import { generateTypes, MSG_SEND_TYPES } from '@althea-net/eip712'
 
-const createEIP712MsgSend = (context: TxContext, params: MsgSendParams) => {
+export const createEIP712MsgSend = (context: TxContext, params: MsgSendParams) => {
   const types = generateTypes(MSG_SEND_TYPES)
 
   const message = createMsgSend(context, params)
@@ -19,7 +19,7 @@ export interface MsgSendParams {
   denom: string
 }
 
-const createMsgSend = (context: TxContext, params: MsgSendParams) => {
+export const createMsgSend = (context: TxContext, params: MsgSendParams) => {
   return protoCreateMsgSend(
     context.sender.accountAddress,
     params.destinationAddress,

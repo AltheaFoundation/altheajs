@@ -6,7 +6,7 @@ export interface MsgStakeRevokeAuthorizationParams {
   granteeAddress: string
 }
 
-const createEIP712MsgStakeRevokeAuthorization = () => {
+export const createEIP712MsgStakeRevokeAuthorization = () => {
   // TODO: EIP-712 is blocked until this message is added to @althea-net/eip712
   return {
     types: {},
@@ -14,7 +14,7 @@ const createEIP712MsgStakeRevokeAuthorization = () => {
   }
 }
 
-const createCosmosMsgStakeRevokeAuthorization = (
+export const createCosmosMsgStakeRevokeAuthorization = (
   context: TxContext,
   params: MsgStakeRevokeAuthorizationParams,
 ) => {

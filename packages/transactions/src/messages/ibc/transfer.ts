@@ -24,7 +24,7 @@ export interface IBCMsgTransferParams {
   memo?: string
 }
 
-const createEIP712IBCMsgTransfer = (
+export const createEIP712IBCMsgTransfer = (
   context: TxContext,
   params: IBCMsgTransferParams,
 ) => {
@@ -50,7 +50,7 @@ const createEIP712IBCMsgTransfer = (
   }
 }
 
-const createCosmosIBCMsgTransfer = (
+export const createCosmosIBCMsgTransfer = (
   context: TxContext,
   params: IBCMsgTransferParams,
 ) => {

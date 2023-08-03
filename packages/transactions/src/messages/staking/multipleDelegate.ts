@@ -12,7 +12,7 @@ export interface MultipleMsgDelegateParams {
   values: MsgDelegateParams[]
 }
 
-const createEIP712MultipleMsgDelegate = (
+export const createEIP712MultipleMsgDelegate = (
   context: TxContext,
   params: MultipleMsgDelegateParams,
 ) => {
@@ -33,7 +33,7 @@ const createEIP712MultipleMsgDelegate = (
   }
 }
 
-const createCosmosMultipleMsgDelegate = (
+export const createCosmosMultipleMsgDelegate = (
   context: TxContext,
   params: MultipleMsgDelegateParams,
 ) => {

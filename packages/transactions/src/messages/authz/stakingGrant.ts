@@ -9,7 +9,7 @@ export interface MsgStakeAuthorizationParams {
   expiration: number
 }
 
-const createEIP712MsgStakeAuthorization = () => {
+export const createEIP712MsgStakeAuthorization = () => {
   // TODO: EIP-712 Stake Authorization is blocked until StakeAuthorization
   // is added to @althea-net/eip712
   return {
@@ -18,7 +18,7 @@ const createEIP712MsgStakeAuthorization = () => {
   }
 }
 
-const createCosmosMsgStakeAuthorization = (
+export const createCosmosMsgStakeAuthorization = (
   context: TxContext,
   params: MsgStakeAuthorizationParams,
 ) => {

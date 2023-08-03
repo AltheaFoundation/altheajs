@@ -14,7 +14,7 @@ export interface MsgMicrotxParams {
   sender: string
 }
 
-const createEIP712MsgMicrotx = (params: MsgMicrotxParams) => {
+export const createEIP712MsgMicrotx = (params: MsgMicrotxParams) => {
   const types = generateTypes(MSG_MICROTX_TYPES)
 
   const message = createMsgMicrotx(
@@ -30,7 +30,7 @@ const createEIP712MsgMicrotx = (params: MsgMicrotxParams) => {
   }
 }
 
-const createCosmosMsgMicrotx = (params: MsgMicrotxParams) => {
+export const createCosmosMsgMicrotx = (params: MsgMicrotxParams) => {
   return protoMsgMicrotx(
     params.denom,
     params.amount,

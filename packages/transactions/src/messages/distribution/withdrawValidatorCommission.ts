@@ -11,7 +11,7 @@ export interface MsgWithdrawValidatorCommissionParams {
   validatorAddress: string
 }
 
-const createEIP712MsgWithdrawValidatorCommission = (
+export const createEIP712MsgWithdrawValidatorCommission = (
   params: MsgWithdrawValidatorCommissionParams,
 ) => {
   const types = generateTypes(MSG_WITHDRAW_VALIDATOR_COMMISSION_TYPES)
@@ -24,7 +24,7 @@ const createEIP712MsgWithdrawValidatorCommission = (
   }
 }
 
-const createCosmosMsgWithdrawValidatorCommission = (
+export const createCosmosMsgWithdrawValidatorCommission = (
   params: MsgWithdrawValidatorCommissionParams,
 ) => {
   return protoMsgWithdrawValidatorCommission(params.validatorAddress)

@@ -19,7 +19,7 @@ export interface MsgEditValidatorParams {
   minSelfDelegation: string | undefined
 }
 
-const createEIP712MsgEditValidator = (params: MsgEditValidatorParams) => {
+export const createEIP712MsgEditValidator = (params: MsgEditValidatorParams) => {
   const types = generateTypes(MSG_EDIT_VALIDATOR_TYPES)
 
   const message = createMsgEditValidator(
@@ -39,7 +39,7 @@ const createEIP712MsgEditValidator = (params: MsgEditValidatorParams) => {
   }
 }
 
-const createCosmosMsgEditValidator = (params: MsgEditValidatorParams) => {
+export const createCosmosMsgEditValidator = (params: MsgEditValidatorParams) => {
   return protoMsgEditValidator(
     params.moniker,
     params.identity,

@@ -11,7 +11,7 @@ export interface MultipleMsgWithdrawDelegatorRewardParams {
   validatorAddresses: string[]
 }
 
-const createEIP712MultipleMsgWithdrawDelegatorReward = (
+export const createEIP712MultipleMsgWithdrawDelegatorReward = (
   context: TxContext,
   params: MultipleMsgWithdrawDelegatorRewardParams,
 ) => {
@@ -27,7 +27,7 @@ const createEIP712MultipleMsgWithdrawDelegatorReward = (
   }
 }
 
-const createCosmosMultipleMsgWithdrawDelegatorReward = (
+export const createCosmosMultipleMsgWithdrawDelegatorReward = (
   context: TxContext,
   params: MultipleMsgWithdrawDelegatorRewardParams,
 ) => {

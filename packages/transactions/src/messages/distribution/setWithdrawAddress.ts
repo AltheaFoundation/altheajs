@@ -12,7 +12,7 @@ export interface MsgSetWithdrawAddressParams {
   withdrawAddress: string
 }
 
-const createEIP712MsgSetWithdrawAddress = (
+export const createEIP712MsgSetWithdrawAddress = (
   params: MsgSetWithdrawAddressParams,
 ) => {
   const types = generateTypes(MSG_SET_WITHDRAW_ADDRESS_TYPES)
@@ -28,7 +28,7 @@ const createEIP712MsgSetWithdrawAddress = (
   }
 }
 
-const createCosmosMsgSetWithdrawAddress = (
+export const createCosmosMsgSetWithdrawAddress = (
   params: MsgSetWithdrawAddressParams,
 ) => {
   return protoMsgSetWithdrawAddress(

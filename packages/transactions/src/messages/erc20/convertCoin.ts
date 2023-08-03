@@ -14,7 +14,7 @@ export interface MsgConvertCoinParams {
   senderBech32: string
 }
 
-const createEIP712MsgConvertCoin = (params: MsgConvertCoinParams) => {
+export const createEIP712MsgConvertCoin = (params: MsgConvertCoinParams) => {
   const types = generateTypes(MSG_CONVERT_COIN_TYPES)
 
   const message = createMsgConvertCoin(
@@ -30,7 +30,7 @@ const createEIP712MsgConvertCoin = (params: MsgConvertCoinParams) => {
   }
 }
 
-const createCosmosMsgConvertCoin = (params: MsgConvertCoinParams) => {
+export const createCosmosMsgConvertCoin = (params: MsgConvertCoinParams) => {
   return protoMsgConvertCoin(
     params.denom,
     params.amount,

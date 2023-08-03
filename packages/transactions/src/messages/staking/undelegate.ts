@@ -14,7 +14,7 @@ export interface MsgUndelegateParams {
   denom: string
 }
 
-const createEIP712MsgUndelegate = (
+export const createEIP712MsgUndelegate = (
   context: TxContext,
   params: MsgUndelegateParams,
 ) => {
@@ -33,7 +33,7 @@ const createEIP712MsgUndelegate = (
   }
 }
 
-const createCosmosMsgUndelegate = (
+export const createCosmosMsgUndelegate = (
   context: TxContext,
   params: MsgUndelegateParams,
 ) => {

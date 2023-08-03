@@ -16,7 +16,7 @@ export interface MsgGenericAuthorizationParams {
   expires: number
 }
 
-const createEIP712MsgGenericGrant = (
+export const createEIP712MsgGenericGrant = (
   context: TxContext,
   params: MsgGenericAuthorizationParams,
 ) => {
@@ -35,7 +35,7 @@ const createEIP712MsgGenericGrant = (
   }
 }
 
-const createCosmosMsgGenericGrant = (
+export const createCosmosMsgGenericGrant = (
   context: TxContext,
   params: MsgGenericAuthorizationParams,
 ) => {

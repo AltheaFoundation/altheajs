@@ -14,7 +14,7 @@ export interface MsgDelegateParams {
   denom: string
 }
 
-const createEIP712MsgDelegate = (
+export const createEIP712MsgDelegate = (
   context: TxContext,
   params: MsgDelegateParams,
 ) => {
@@ -33,7 +33,7 @@ const createEIP712MsgDelegate = (
   }
 }
 
-const createCosmosMsgDelegate = (
+export const createCosmosMsgDelegate = (
   context: TxContext,
   params: MsgDelegateParams,
 ) => {

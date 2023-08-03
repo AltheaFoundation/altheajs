@@ -12,7 +12,7 @@ export interface MsgGenericRevokeParams {
   typeUrl: string
 }
 
-const createEIP712MsgGenericRevoke = (
+export const createEIP712MsgGenericRevoke = (
   context: TxContext,
   params: MsgGenericRevokeParams,
 ) => {
@@ -30,7 +30,7 @@ const createEIP712MsgGenericRevoke = (
   }
 }
 
-const createCosmosMsgGenericRevoke = (
+export const createCosmosMsgGenericRevoke = (
   context: TxContext,
   params: MsgGenericRevokeParams,
 ) => {

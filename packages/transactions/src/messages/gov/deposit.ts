@@ -14,7 +14,7 @@ export interface MsgDepositParams {
   }
 }
 
-const createEIP712MsgDeposit = (
+export const createEIP712MsgDeposit = (
   context: TxContext,
   params: MsgDepositParams,
 ) => {
@@ -32,7 +32,7 @@ const createEIP712MsgDeposit = (
   }
 }
 
-const createCosmosMsgDeposit = (
+export const createCosmosMsgDeposit = (
   context: TxContext,
   params: MsgDepositParams,
 ) => {

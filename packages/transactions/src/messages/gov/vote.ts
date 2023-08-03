@@ -8,7 +8,7 @@ export interface MsgVoteParams {
   option: number
 }
 
-const createEIP712MsgVote = (context: TxContext, params: MsgVoteParams) => {
+export const createEIP712MsgVote = (context: TxContext, params: MsgVoteParams) => {
   const types = generateTypes(MSG_VOTE_TYPES)
 
   const message = createMsgVote(
@@ -23,7 +23,7 @@ const createEIP712MsgVote = (context: TxContext, params: MsgVoteParams) => {
   }
 }
 
-const createCosmosMsgVote = (context: TxContext, params: MsgVoteParams) => {
+export const createCosmosMsgVote = (context: TxContext, params: MsgVoteParams) => {
   return protoMsgVote(
     params.proposalId,
     params.option,

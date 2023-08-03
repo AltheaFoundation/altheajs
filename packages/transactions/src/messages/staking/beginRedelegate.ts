@@ -15,7 +15,7 @@ export interface MsgBeginRedelegateParams {
   denom: string
 }
 
-const createEIP712MsgBeginRedelegate = (
+export const createEIP712MsgBeginRedelegate = (
   context: TxContext,
   params: MsgBeginRedelegateParams,
 ) => {
@@ -35,7 +35,7 @@ const createEIP712MsgBeginRedelegate = (
   }
 }
 
-const createCosmosMsgBeginRedelegate = (
+export const createCosmosMsgBeginRedelegate = (
   context: TxContext,
   params: MsgBeginRedelegateParams,
 ) => {

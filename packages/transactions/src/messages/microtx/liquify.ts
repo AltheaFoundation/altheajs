@@ -11,7 +11,7 @@ export interface MsgLiquifyParams {
   sender: string
 }
 
-const createEIP712MsgLiquify = (params: MsgLiquifyParams) => {
+export const createEIP712MsgLiquify = (params: MsgLiquifyParams) => {
   const types = generateTypes(MSG_LIQUIFY_TYPES)
 
   const message = createMsgLiquify(
@@ -24,7 +24,7 @@ const createEIP712MsgLiquify = (params: MsgLiquifyParams) => {
   }
 }
 
-const createCosmosMsgLiquify = (params: MsgLiquifyParams) => {
+export const createCosmosMsgLiquify = (params: MsgLiquifyParams) => {
   return protoMsgLiquify(
     params.sender,
   )

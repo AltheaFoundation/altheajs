@@ -41,11 +41,11 @@ export interface EIP712TypedData {
  * in an array. This enables our interfaces to indiscriminantly take either pure objects or
  * arrays to easily support wrapping muliple messages.
  */
-const wrapTypeToArray = <T>(obj: T | T[]) => {
+export const wrapTypeToArray = <T>(obj: T | T[]) => {
   return Array.isArray(obj) ? obj : [obj]
 }
 
-const createLegacyEIP712Payload = (
+export const createLegacyEIP712Payload = (
   context: TxContext,
   typedData: EIP712TypedData,
 ) => {
@@ -72,7 +72,7 @@ const createLegacyEIP712Payload = (
   return createEIP712(typedData.types, chain.chainId, messages)
 }
 
-const createEIP712TypedData = (
+export const createEIP712TypedData = (
   context: TxContext,
   protoMsgs: MessageGenerated | MessageGenerated[],
 ) => {
@@ -96,7 +96,7 @@ const createEIP712TypedData = (
   }
 }
 
-const createCosmosPayload = (
+export const createCosmosPayload = (
   context: TxContext,
   cosmosPayload: any | any[], // TODO: re-export Protobuf Message type from /proto
 ) => {
