@@ -1,11 +1,12 @@
 import { createMsgSend as protoCreateMsgSend } from '@althea-net/proto'
+import { createMsgSend } from '@althea-net/eip712'
 import { createTransactionPayload, newCreateTransactionPayload, TxContext } from '../base'
 import { generateTypes, MSG_SEND_TYPES } from '@althea-net/eip712'
 
 export const createEIP712MsgSend = (context: TxContext, params: MsgSendParams) => {
   const types = generateTypes(MSG_SEND_TYPES)
 
-  const message = createMsgSend(context, params)
+  const message = createMsgSend(params.amount, params.denom, context.sender.accountAddress, params.destinationAddress)
 
   return {
     types,
@@ -19,7 +20,7 @@ export interface MsgSendParams {
   denom: string
 }
 
-export const createMsgSend = (context: TxContext, params: MsgSendParams) => {
+export const createCosmosMsgSend = (context: TxContext, params: MsgSendParams) => {
   return protoCreateMsgSend(
     context.sender.accountAddress,
     params.destinationAddress,
@@ -41,7 +42,7 @@ export const createMsgSend = (context: TxContext, params: MsgSendParams) => {
  *
  */
 export const createTxMsgSend = (context: TxContext, params: MsgSendParams) => {
-  const msgSend = createMsgSend(context, params)
+  const msgSend = createCosmosMsgSend(context, params)
   return newCreateTransactionPayload(context, msgSend)
   // Works with multiple messages
   // return newCreateTransactionPayload(context, [msgSend, msgSend])
@@ -49,7 +50,7 @@ export const createTxMsgSend = (context: TxContext, params: MsgSendParams) => {
 
 export const oldCreateTxMsgSend = (context: TxContext, params: MsgSendParams) => {
   const typedData = createEIP712MsgSend(context, params)
-  const cosmosMsg = createMsgSend(context, params)
+  const cosmosMsg = createCosmosMsgSend(context, params)
 
   return createTransactionPayload(context, typedData, cosmosMsg)
 }
