@@ -1,7 +1,7 @@
 {
   "name": "@althea-net/transactions",
   "description": "Transactions generator for Althea-L1",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,7 +27,7 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@althea-net/eip712": "^0.4.2",
+    "@althea-net/eip712": "^0.5.2",
     "link-module-alias": "^1.2.0",
     "shx": "^0.3.4"
   },
