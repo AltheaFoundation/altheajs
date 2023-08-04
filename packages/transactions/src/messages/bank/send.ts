@@ -42,13 +42,6 @@ export const createCosmosMsgSend = (context: TxContext, params: MsgSendParams) =
  *
  */
 export const createTxMsgSend = (context: TxContext, params: MsgSendParams) => {
-  const msgSend = createCosmosMsgSend(context, params)
-  return newCreateTransactionPayload(context, msgSend)
-  // Works with multiple messages
-  // return newCreateTransactionPayload(context, [msgSend, msgSend])
-}
-
-export const oldCreateTxMsgSend = (context: TxContext, params: MsgSendParams) => {
   const typedData = createEIP712MsgSend(context, params)
   const cosmosMsg = createCosmosMsgSend(context, params)
 
