@@ -6,5 +6,8 @@ export * from './messages/erc20/index'
 export * from './messages/gov/index'
 export * from './messages/ibc/index'
 export * from './messages/staking/index'
+
+export * from './messages/microtx/index'
+
 export * from './messages/txRaw'
 export * from './messages/web3Extension'
