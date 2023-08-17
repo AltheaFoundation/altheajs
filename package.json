@@ -18,7 +18,7 @@
   "scripts": {
     "compileproto": "bash scripts/create-proto-files.sh",
     "build": "lerna run --parallel build",
-    "lerna:publish": "lerna publish from-package --concurrency=1",
+    "lerna:publish": "lerna publish from-package",
     "build:watch": "lerna run --parallel build:watch",
     "build:fresh": "yarn clean && yarn build",
     "build:patch:publish": "yarn build:fresh && yarn patch && yarn lerna:publish",
