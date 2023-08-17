@@ -144,6 +144,33 @@ export const createTransactionPayload = (
   }
 }
 
+/**
+ * Creates a transaction payload for multiple messages, see createTransactionPayload
+ * Note only works for messages of the same type, multi-type signing requires a chain upgrade
+ * in which case newCreateTransacitonPayload might do the job
+ *
+ * @param context - Transaction Context
+ * @param typedData - EIP-712 Typed Data with multiple messages of the same type
+ * @param cosmosMessage - Cosmos SDK Messages to sign (all of the same type)
+ * @returns Signable Payload
+ *
+ */
+export const createMultiMsgTransactionPayload = (
+  context: TxContext,
+  typedData: EIP712TypedData,
+  cosmosMessages: any, // TODO: re-export Protobuf Message type from /proto
+): TxPayload => {
+  const eip712Payload = createLegacyEIP712Payload(context, typedData)
+
+  const cosmosPayload = createCosmosPayload(context, cosmosMessages)
+
+  return {
+    signDirect: cosmosPayload.signDirect,
+    legacyAmino: cosmosPayload.legacyAmino,
+    eipToSign: eip712Payload,
+  }
+}
+
 export const newCreateTransactionPayload = (
   context: TxContext,
   messages: MessageGenerated | MessageGenerated[],

@@ -1,16 +1,20 @@
 import { createMsgSend as protoCreateMsgSend } from '@althea-net/proto'
 import { createMsgSend } from '@althea-net/eip712'
-import { createTransactionPayload, newCreateTransactionPayload, TxContext } from '../base'
+import { createMultiMsgTransactionPayload, TxContext, wrapTypeToArray } from '../base'
 import { generateTypes, MSG_SEND_TYPES } from '@althea-net/eip712'
 
-export const createEIP712MsgSend = (context: TxContext, params: MsgSendParams) => {
+export const createEIP712MsgSend = (context: TxContext, params: MsgSendParams[]) => {
   const types = generateTypes(MSG_SEND_TYPES)
 
-  const message = createMsgSend(params.amount, params.denom, context.sender.accountAddress, params.destinationAddress)
+  let messages = new Array()
+  for (var param of params) {
+    const message = createMsgSend(param.amount, param.denom, context.sender.accountAddress, param.destinationAddress)
+    messages.push(message)
+  }
 
   return {
     types,
-    message,
+    message: messages,
   }
 }
 
@@ -20,13 +24,18 @@ export interface MsgSendParams {
   denom: string
 }
 
-export const createCosmosMsgSend = (context: TxContext, params: MsgSendParams) => {
-  return protoCreateMsgSend(
-    context.sender.accountAddress,
-    params.destinationAddress,
-    params.amount,
-    params.denom,
-  )
+export const createCosmosMsgSend = (context: TxContext, params: MsgSendParams[]) => {
+  let messages = new Array()
+  for (var param of params) {
+    const message = protoCreateMsgSend(
+      context.sender.accountAddress,
+      param.destinationAddress,
+      param.amount,
+      param.denom,
+    )
+    messages.push(message)
+  }
+  return messages
 }
 
 /**
@@ -41,9 +50,10 @@ export const createCosmosMsgSend = (context: TxContext, params: MsgSendParams) =
  * @returns Transaction with the MsgSend payload
  *
  */
-export const createTxMsgSend = (context: TxContext, params: MsgSendParams) => {
-  const typedData = createEIP712MsgSend(context, params)
-  const cosmosMsg = createCosmosMsgSend(context, params)
+export const createTxMsgSend = (context: TxContext, params: MsgSendParams | MsgSendParams[]) => {
+  let multiparams = wrapTypeToArray(params)
+  const typedData = createEIP712MsgSend(context, multiparams)
+  const cosmosMsg = createCosmosMsgSend(context, multiparams)
 
-  return createTransactionPayload(context, typedData, cosmosMsg)
+  return createMultiMsgTransactionPayload(context, typedData, cosmosMsg)
 }
