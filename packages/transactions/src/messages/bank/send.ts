@@ -1,6 +1,6 @@
 import { createMsgSend as protoCreateMsgSend } from '@althea-net/proto'
 import { createMsgSend } from '@althea-net/eip712'
-import { createMultiMsgTransactionPayload, TxContext, wrapTypeToArray } from '../base'
+import { createTransactionPayload, TxContext, wrapTypeToArray } from '../base'
 import { generateTypes, MSG_SEND_TYPES } from '@althea-net/eip712'
 
 export const createEIP712MsgSend = (context: TxContext, params: MsgSendParams[]) => {
@@ -55,5 +55,5 @@ export const createTxMsgSend = (context: TxContext, params: MsgSendParams | MsgS
   const typedData = createEIP712MsgSend(context, multiparams)
   const cosmosMsg = createCosmosMsgSend(context, multiparams)
 
-  return createMultiMsgTransactionPayload(context, typedData, cosmosMsg)
+  return createTransactionPayload(context, typedData, cosmosMsg)
 }

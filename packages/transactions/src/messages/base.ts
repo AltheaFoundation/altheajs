@@ -119,46 +119,18 @@ export const createCosmosPayload = (
 }
 
 /**
- * Creates a signable transaction with SignDirect,
- * LegacyAmino, and EIP-712 components.
+ * Creates a signable transaction with SignDirect, LegacyAmino, and EIP-712 components.
+ * Supports multiple Msgs of the same type (must be in typedData AND cosmosMessages)
  *
  * @param context - Transaction Context
  * @param typedData - EIP-712 Typed Data
- * @param cosmosMessage - Cosmos SDK Message to sign
- * @returns Signable Payload
- *
+ * @param cosmosMessages - Cosmos SDK Message(s) to sign
+ * @returns  Signable Payload with EIP712 types, Sign Direct + Legacy Amino
  */
 export const createTransactionPayload = (
   context: TxContext,
   typedData: EIP712TypedData,
-  cosmosMessage: any, // TODO: re-export Protobuf Message type from /proto
-): TxPayload => {
-  const eip712Payload = createLegacyEIP712Payload(context, typedData)
-
-  const cosmosPayload = createCosmosPayload(context, cosmosMessage)
-
-  return {
-    signDirect: cosmosPayload.signDirect,
-    legacyAmino: cosmosPayload.legacyAmino,
-    eipToSign: eip712Payload,
-  }
-}
-
-/**
- * Creates a transaction payload for multiple messages, see createTransactionPayload
- * Note only works for messages of the same type, multi-type signing requires a chain upgrade
- * in which case newCreateTransacitonPayload might do the job
- *
- * @param context - Transaction Context
- * @param typedData - EIP-712 Typed Data with multiple messages of the same type
- * @param cosmosMessage - Cosmos SDK Messages to sign (all of the same type)
- * @returns Signable Payload
- *
- */
-export const createMultiMsgTransactionPayload = (
-  context: TxContext,
-  typedData: EIP712TypedData,
-  cosmosMessages: any, // TODO: re-export Protobuf Message type from /proto
+  cosmosMessages: any | any[], // TODO: re-export Protobuf Message type from /proto
 ): TxPayload => {
   const eip712Payload = createLegacyEIP712Payload(context, typedData)
 
@@ -171,6 +143,14 @@ export const createMultiMsgTransactionPayload = (
   }
 }
 
+/**
+ * Creates an EIP712-compatible transaction payload using the new multi-msg type version of
+ * EIP712 (NOT YET SUPPORTED BY ALTHEA-L1, requires a feature backport)
+ *
+ * @param context - Transaction Context
+ * @param messages - Protobuf-encoded message(s)
+ * @returns Signable Payload with EIP712 types, Sign Direct + Legacy Amino
+ */
 export const newCreateTransactionPayload = (
   context: TxContext,
   messages: MessageGenerated | MessageGenerated[],
