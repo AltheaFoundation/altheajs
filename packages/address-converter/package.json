@@ -1,7 +1,7 @@
 {
   "name": "@althea-net/address-converter",
   "description": "Address converter, convert ETH address to Ethermint address.",
-  "version": "0.5.2",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
