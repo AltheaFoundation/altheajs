@@ -1,7 +1,7 @@
 {
   "name": "@althea-net/transactions",
   "description": "Transactions generator for Althea-L1",
-  "version": "0.6.1",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
