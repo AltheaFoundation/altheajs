@@ -1,6 +1,6 @@
 {
   "name": "@althea-net/eip712",
-  "description": "EIP712 transaction creator for EVMOS.",
+  "description": "EIP712 transaction creator for ALTHEA.",
   "version": "1.0.1",
   "license": "MIT",
   "main": "dist/index.js",
