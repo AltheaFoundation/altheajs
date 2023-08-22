@@ -1,5 +1,5 @@
 {
-  "name": "@althea-net/altheajs",
+  "name": "altheajs",
   "version": "1.0.0",
   "main": "index.js",
   "types": "dist/index.d.ts",
@@ -7,7 +7,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "Guillermo Paoletti <guillermo.paoletti@gmail.com>",
+  "author": "Christian Borst <christian@althea.systems>",
   "repository": "https://github.com/althea-net/altheajs",
   "workspaces": {
     "packages": [

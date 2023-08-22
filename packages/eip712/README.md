@@ -1,6 +1,8 @@
 # EIP712
 
-EIP712 transactions creator.
+EIP-712 transactions creator, handles the creation of EIP-712 types used for signing via MetaMask with `eth_signTypedData_v4` or Keplr's signEthereum() method.
+
+This package is not meant to be used directly, `@althea-net/transactions` contains convenient transaction generation functions which should be used instead.
 
 # Installation
 

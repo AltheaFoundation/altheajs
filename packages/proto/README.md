@@ -2,6 +2,8 @@
 
 Protobuf files used to generate cosmos transactions for Althea-L1, Canto, and Ethermint.
 
+This package is not meant to be used directly, `@althea-net/transactions` contains convenient transaction generation functions which should be used instead.
+
 ## Convert protobuf to Eth Transaction
 
 Example on how to convert protobuf message -> ethereum tx [here]('./tests/messages/msgEthereumTx.spec.ts')

@@ -31,7 +31,7 @@ Or:
 npm install @althea-net/<package>
 ```
 
-### Yarn v2.x or v3.attestationx
+### Yarn v2.x or v3.x
 
 Add the following to an `.yarnrc.yml` file in your project root:
 
@@ -114,7 +114,7 @@ transactions, and it must be encoded as a compressed key in
 #### Keplr
 
 ```ts
-const cosmosChainID = 'evmos_9001-2' // Use 'evmos_9000-4' for testnet
+const cosmosChainID = 'althea_417834-3' // Hackathon testnet
 
 const account = await window?.keplr?.getKey(cosmosChainID)
 const pk = Buffer.from(account.pubKey).toString('base64')
@@ -218,10 +218,13 @@ const tx: TxGenerated = createTxMsgSend(context, params)
 ### Sign the Transaction with MetaMask
 
 Althea-L1 supports EIP-712 signatures for Cosmos payloads to be signed using Ethereum wallets such as MetaMask.
+The signature MUST NOT go in the signature field, and instead must be placed in an ExtensionOptionsWeb3Tx.
+In a future update to Althea-L1 ExtensionOptionsWeb3Tx will be deprecated for a new style of EIP-712 signing.
 
 ```ts
 import { createTxRaw } from '@althea-net/proto'
 import { altheaToEth } from '@althea-net/address-converter'
+import { signatureToWeb3Extension } from '@althea-net/transactions';
 
 // First, populate a TxContext object and create a signable Tx payload.
 // (See 'Create a Signable Transaction' to learn how to create these).
@@ -241,17 +244,18 @@ const signature = await window.ethereum.request({
   params: [senderHexAddress, eip712Payload],
 })
 
-// Create a signed Tx payload that can be broadcast to a node.
-const signatureBytes = Buffer.from(signature.replace('0x', ''), 'hex')
+const extension = signatureToWeb3Extension(chain, sender, signature);
 
-const { signDirect } = tx
-const bodyBytes = signDirect.body.toBinary()
-const authInfoBytes = signDirect.authInfo.toBinary()
+const { legacyAmino } = tx
+legacyAmino.body.extensionOptions.push(createAnyMessage(extension))
+
+const bodyBytes = legacyAmino.body.toBinary()
+const authInfoBytes = legacyAmino.authInfo.toBinary()
 
 const signedTx = createTxRaw(
   bodyBytes,
   authInfoBytes,
-  [signatureBytes],
+  [new Uint8Array()],
 )
 ```
 
@@ -301,6 +305,8 @@ const signedTx = createTxRaw(
 ### Sign the Transaction with Keplr (EIP-712)
 
 AltheaJS also supports signing [EIP-712](https://eips.ethereum.org/EIPS/eip-712) payloads using Keplr. This is necessary for Ledger users on Keplr, since the Ledger device cannot sign `SignDirect` payloads.
+The signature MUST NOT go in the signature field, and instead must be placed in an ExtensionOptionsWeb3Tx.
+In a future update to Althea-L1 ExtensionOptionsWeb3Tx will be deprecated for a new style of EIP-712 signing.
 
 ```ts
 import { EthSignType } from '@keplr-wallet/types';
@@ -325,14 +331,18 @@ if (!signature) {
   // Handle signature failure here.
 }
 
-const { signDirect } = tx
-const bodyBytes = signDirect.body.toBinary()
-const authInfoBytes = signDirect.authInfo.toBinary()
+const extension = signatureToWeb3Extension(chain, sender, signature);
+
+const { legacyAmino } = tx
+legacyAmino.body.extensionOptions.push(createAnyMessage(extension))
+
+const bodyBytes = legacyAmino.body.toBinary()
+const authInfoBytes = legacyAmino.authInfo.toBinary()
 
 const signedTx = createTxRaw(
   bodyBytes,
   authInfoBytes,
-  [signature],
+  [new Uint8Array()],
 )
 ```
 
@@ -349,9 +359,8 @@ import {
 // First, sign a transaction using MetaMask or Keplr.
 const signedTx = createTxRaw(...)
 
-// Find a node URL from a network endpoint:
-// https://docs.evmos.org/develop/api/networks.
-const nodeUrl = ...
+// Use the Tx broadcasting API usually on port 1317
+const nodeUrl = "https://althea.zone:1317"
 
 const postOptions = {
   method: 'POST',

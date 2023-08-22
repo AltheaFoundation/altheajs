@@ -1,6 +1,6 @@
  Address converter
 
-A simple converter between `ETH` (0x...) addresses and `Althea-L1` (althea1...) addresses.
+A simple converter between `ETH` (0x...) addresses and `Althea-L1` (althea1...) addresses, with additional chain support.
 
 ## Installation
 
@@ -83,6 +83,28 @@ let address = ethToCanto('0xACA5D5F3DC8DDFE820890314350BC507F64A7C6E')
 let address = cantoToEth('canto14jjatu7u3h07sgyfqv2r2z79qlmy5lrw<checksum>') // replace <checksum> with the actual last 6 digits of the bech32 address
 // "ACA5D5F3DC8DDFE820890314350BC507F64A7C6E"
 ```
+
+## Create your own converter
+
+```ts
+// Bech32 Address support for "foochain1..." addresses
+const chainPrefix = "foochain"
+const FOOCHAIN = bech32Chain("FOOCHAIN", chainPrefix)
+
+// EIP-55 chain support
+const evmChainID = 1234
+const EVMCHAIN = hexChecksumChain("MYEVM", evmChainID)
+
+export const fooToMyEVM = (fooAddress: string) => {
+  const data = FOOCHAIN.decoder(fooAddress)
+  return EVMCHAIN.encoder(data)
+}
+export const myEVMToFoo = (myevmAddress: string) => {
+  const data = EVMCHAIN.encoder(myevmAddress)
+  return FOOCHAIN.decoder(data)
+}
+```
+
 ## Reference
 
 - [ENSDOMAINS-AddressEnconder](https://github.com/ensdomains/address-encoder)
